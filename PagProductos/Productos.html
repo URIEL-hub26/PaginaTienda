@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Productos</title>
+        <link rel="stylesheet" href="/estilos/estiloProductos.css">
+    </head>
+    <body>
+        <div id="header-placeholder"></div>
+        <h1>Productos</h1>
+        <table id="table">
+            <tr>
+                <th>Producto</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Producto 1</td>
+                <td>Descripción del producto 1</td>
+                <td>$10.00</td>
+            </tr>
+            <tr>
+                <td>Producto 2</td>
+                <td>Descripción del producto 2</td>
+                <td>$15.00</td>
+            </tr>
+            <!-- Agrega más productos según sea necesario -->
+        </table>
+    </body>
+
+
+
+
+
+
+
+
+
+
+    
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('../PagHeader/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById
+            ('header-placeholder').innerHTML=data;
+        }
+        )
+        </script>
+    <script>
+        fetch('../PagHeader/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById
+            ('footer-placeholder').innerHTML=data;
+        }
+        )
+        </script>
+        
+</html>
