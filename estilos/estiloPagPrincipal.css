@@ -1,0 +1,33 @@
+
+
+#descripcion {
+    text-align: center;
+    margin-top: 1%;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
+#productos ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+#productos li {
+    padding: 0% 10%;
+    border-right: 1px solid gray;
+}
+
+#productos li:last-child {
+    border-right: none;
+}
+#pie ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+#pie li {
+    padding: 1% 1%;
+    border-right: 1px solid gray;
+}

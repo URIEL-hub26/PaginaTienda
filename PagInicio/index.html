@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+<title>NovaMart</title>
+        <link rel="stylesheet" href="/estilos/estiloPagPrincipal.css">     
+    </head>
+    <body>  
+        
+                <img src="/PagInicio/imagenes/ban.jpg" alt="banner" width="1500px" height="100px">
+
+        <section id="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="pedidos.html">Pedidos</a></li>
+                <li><a href="metodos_pagos.html">Métodos de pago</a></li>
+                <li><a href="sobre_nosotros.html">Sobre nosotros</a></li>
+                <li><a href="/PagRegistro/registro.html">Registro</a></li>
+            </ul>
+            </section>
+            <section id="descripcion">
+            
+                <h2>Bienvenido a nuestra tienda</h2>
+                <p>En nuestra tienda encontrarás una amplia variedad de productos de alta calidad. Explora nuestro catálogo y realiza tus pedidos de manera fácil y rápida.</p>
+            </section>
+            <section id="productos">
+                <ul>
+                <li><img src="/PagInicio/imagenes/imgleche.png" alt="Leche"></li> 
+                <li><a href="producto2.html">producto 2</a></li>
+                <li><a href="producto3.html">producto 3 </a></li> 
+                </ul>
+            </section>
+        
+    </body>
+    <footer>
+        <h3>Siguenos</h3>
+        <section id="pie">
+        <ul>
+            <li><a href="facebook"> Facebook</a> </li>
+            <li><a href="instagram">Instagram</a></li>
+        </ul>
+        </section>
+    
+    </footer>
+    <script>
+        fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById
+            ('header-placeholder').innerHTML=data;
+        }
+        )
+        </script>
+</html>

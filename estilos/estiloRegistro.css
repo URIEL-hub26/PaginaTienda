@@ -1,0 +1,11 @@
+
+.registro{
+    margin-left: 300px;
+    margin-right: 600px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 2px solid;
+    border-radius: 10px;
+    text-align: center;
+}

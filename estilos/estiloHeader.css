@@ -1,0 +1,14 @@
+#menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+#menu li {
+    padding: 1% 1%;
+    border-right: 1px solid gray;
+}
+
+#menu li:last-child {
+    border-right: none;
+}
