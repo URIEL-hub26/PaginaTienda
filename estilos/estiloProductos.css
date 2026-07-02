@@ -63,7 +63,7 @@
     gap: 20px;
 }
 
-/* Diseño de cada tarjeta de producto (Card) */
+/* Diseño de cada tarjeta de producto  */
 .tarjeta-producto {
     background-color: #fff;
     border: 1px solid #ededed;
@@ -98,7 +98,7 @@
     margin: 5px 0 15px 0;
 }
 
-/* El botón verde estilo "Abarrotes" */
+/* El botón de "Abarrotes" */
 .btn-agregar {
     background-color: #2e7d32;
     color: rgba(255, 255, 255, 0.74);
