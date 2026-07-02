@@ -5,26 +5,47 @@
         <link rel="stylesheet" href="/estilos/estiloProductos.css">
     </head>
     <body>
-        <div id="header-placeholder"></div>
-        <h1>Productos</h1>
-        <table id="table">
-            <tr>
-                <th>Producto</th>
-                <th>Descripción</th>
-                <th>Precio</th>
-            </tr>
-            <tr>
-                <td>Producto 1</td>
-                <td>Descripción del producto 1</td>
-                <td>$10.00</td>
-            </tr>
-            <tr>
-                <td>Producto 2</td>
-                <td>Descripción del producto 2</td>
-                <td>$15.00</td>
-            </tr>
-            <!-- Agrega más productos según sea necesario -->
-        </table>
+<div class="contenedor-catalogo">
+
+    <aside class="barra-lateral">
+        <h3>Categorías</h3>
+        <ul>
+            <li><a href="#" class="active">Todos</a></li>
+            <li><a href="#">Abarrotes</a></li>
+            <li><a href="#">Lácteos</a></li>
+            <li><a href="#">Bebidas</a></li>
+            <li><a href="#">Limpieza</a></li>
+            <li><a href="#">Botanas</a></li>
+            <li><a href="#">Enlatados</a></li>
+            <li><a href="#">Cuidado personal</a></li>
+        </ul>
+    </aside>
+
+    <main class="seccion-productos">
+        <div class="barra-busqueda">
+            <input type="text" placeholder="🔍 Buscar productos...">
+        </div>
+
+        <div class="grid-productos">
+            
+            <div class="tarjeta-producto">
+                <img src="/PagInicio/imagenes/imgleche.png" alt="Leche 1L">
+                <h4>Leche 1L</h4>
+                <p class="precio">$22.00</p>
+                <button class="btn-agregar">Agregar</button>
+            </div>
+
+            <div class="tarjeta-producto">
+                <img src="/PagInicio/imagenes/aceite.png" alt="Aceite 1L">
+                <h4>Aceite 1L</h4>
+                <p class="precio">$32.00</p>
+                <button class="btn-agregar">Agregar</button>
+            </div>
+
+            </div>
+    </main>
+
+</div>        
     </body>
 
 
