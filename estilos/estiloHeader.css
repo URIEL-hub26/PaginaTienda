@@ -1,16 +1,154 @@
-.logo{
-    color:#8bc600;
-}
+/*==============================
+    HEADER
+==============================*/
+
 header{
-    background:white;
+
+    position:sticky;
+    top:0;
+
+    width:100%;
+
+    background:#fff;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
-    padding:20px 60px;
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+    padding:18px 60px;
+
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+
+    z-index:1000;
+
 }
+
+/*==============================
+    LOGO
+==============================*/
+
+.logo h2{
+
+    color:#2E7D32;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+/*==============================
+    MENÚ
+==============================*/
+
 nav ul{
+
     display:flex;
+
     list-style:none;
-    gap:30px;
+
+    gap:40px;
+
+}
+
+nav ul li{
+
+    position:relative;
+
+}
+
+nav ul li a{
+
+    text-decoration:none;
+
+    color:#263238;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+/* Línea inferior */
+
+nav ul li a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:3px;
+
+    background:#2E7D32;
+
+    transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+    color:#2E7D32;
+
+}
+
+nav ul li a:hover::after{
+
+    width:100%;
+
+}
+
+/*==============================
+    ICONOS
+==============================*/
+
+.iconos{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.iconos a{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    color:#2E7D32;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.iconos a:hover{
+
+    background:#2E7D32;
+
+    color:white;
+
+    transform:translateY(-3px);
+
 }
