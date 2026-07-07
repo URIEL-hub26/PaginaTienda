@@ -34,7 +34,7 @@
     border-radius: 4px;
 }
 
-.barra-lateral ul li a:hover, 
+.barra-lateral ul li a:hover,
 .barra-lateral ul li a.active {
     background-color: #e8f5e9;
     color: #2e7d32;
@@ -43,7 +43,8 @@
 
 /* Área de contenido principal */
 .seccion-productos {
-    flex: 1; /* Ocupa todo el espacio restante */
+    flex: 1;
+    /* Ocupa todo el espacio restante */
 }
 
 /* Barra de búsqueda */
@@ -70,7 +71,7 @@
     border-radius: 12px;
     padding: 15px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s;
 }
 
@@ -96,6 +97,22 @@
     color: #2e7d32;
     font-size: 18px;
     margin: 5px 0 15px 0;
+}
+
+/* Boton Buscar*/
+.btn-buscar {
+    background-color: #2e7d32;
+    color: rgba(255, 255, 255, 0.74);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+.btn-buscar:hover{
+    background-color: #1b5e20;
 }
 
 /* El botón de "Abarrotes" */
