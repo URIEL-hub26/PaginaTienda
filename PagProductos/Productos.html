@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <div id="header-placeholder"></div>
+                <div id="header-placeholder"></div>
     <div class="contenedor-catalogo">
 
         <aside class="barra-lateral">
@@ -99,43 +99,6 @@
 
     </div>
 </body>
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const enlaces Categorias = document.querySelectorAll(".barra-lateral ul li a");
-  const productos = document.querySelectorAll(".tarjeta-producto"); // Cambia esto por la clase real de tus tarjetas
-
-  enlacesCategorias.forEach(enlace => {
-    enlace.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      // 1. Cambiar la clase activa en el menú lateral
-      enlacesCategorias.forEach(link => link.classList.remove("active"));
-      enlace.classList.add("active");
-
-      // 2. Obtener la categoría seleccionada
-      const categoriaSeleccionada = enlace.getAttribute("data-category");
-
-      // 3. Filtrar los productos
-      productos.forEach(producto => {
-        const categoriaProducto = producto.getAttribute("data-category");
-
-        if (categoriaSeleccionada === "todos" || categoriaProducto === categoriaSeleccionada) {
-          producto.style.display = "block"; // O "flex"/"grid" según uses en tu CSS
-        } else {
-          producto.style.display = "none";
-        }
-      });
-    });
-  });
-});
-
-
-
-
-
-
 
 <div id="footer-placeholder"></div>
 <script>

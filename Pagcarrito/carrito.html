@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito de compras</title>
+    <link rel="stylesheet" href="/Proyecto Tienda/PaginaTienda/estilos/estiloCarrito.css">
+</head>
+<body>
+
+    <section class="contenedor-carrito">
+
+        <h1>Mi carrito</h1>
+
+        <table>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+            </tr>
+
+            <tr>
+                <td>Aceite 1L</td>
+                <td>$32.00</td>
+                <td>
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </td>
+                <td>$32.00</td>
+            </tr>
+
+            <tr>
+                <td>Arroz 1kg</td>
+                <td>$28.00</td>
+                <td>
+                    <button>-</button>
+                    <span>2</span>
+                    <button>+</button>
+                </td>
+                <td>$56.00</td>
+            </tr>
+
+            <tr>
+                <td>Leche 1L</td>
+                <td>$22.00</td>
+                <td>
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </td>
+                <td>$22.00</td>
+            </tr>
+        </table>
+
+        <div class="zona-inferior">
+            <div class="cupon">
+                <p>¿Tienes un código de descuento?</p>
+                <input type="text" placeholder="Escribe tu código">
+                <button>Aplicar</button>
+            </div>
+
+            <div class="resumen">
+                <p>Subtotal: <strong>$110.00</strong></p>
+                <p>Envío: <strong>$0.00</strong></p>
+                <h2>Total: <span>$110.00</span></h2>
+            </div>
+        </div>
+
+        <button class="btn-comprar">Continuar compra</button>
+
+        <div class="aviso">
+            El envío a domicilio aplica en compras de $200 o más.
+        </div>
+
+    </section>
+
+</body>
+</html>
