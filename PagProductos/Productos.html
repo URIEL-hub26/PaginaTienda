@@ -13,14 +13,14 @@
         <aside class="barra-lateral">
             <h3>Categorías</h3>
             <ul>
-                <li><a href="#" class="active" data-categoria="Todos">Todos</a></li>
-                <li><a href="#" data-categoria="Abarrotes">Abarrotes</a></li>
-                <li><a href="#" data-categoria="Lacteos">Lácteos</a></li>
-                <li><a href="#" data-categoria="Bebidas">Bebidas</a></li>
-                <li><a href="#" data-categoria="Limpieza">Limpieza</a></li>
-                <li><a href="#" data-categoria="Botanas">Botanas</a></li>
-                <li><a href="#" data-categoria="Enlatados">Enlatados</a></li>
-                <li><a href="#" data-categoria="CuidadoPersonal">Cuidado personal</a></li>
+                <li><a href="#" class="active" data-categoria="todos">Todos</a></li>
+                <li><a href="#" data-categoria="abarrotes">Abarrotes</a></li>
+                <li><a href="#" data-categoria="lacteos">Lácteos</a></li>
+                <li><a href="#" data-categoria="bebidas">Bebidas</a></li>
+                <li><a href="#" data-categoria="limpieza">Limpieza</a></li>
+                <li><a href="#" data-categoria="botanas">Botanas</a></li>
+                <li><a href="#" data-categoria="enlatados">Enlatados</a></li>
+                <li><a href="#" data-categoria="cuidadopersonal">Cuidado personal</a></li>
             </ul>
         </aside>
 
@@ -38,57 +38,57 @@
 
             <div class="grid-productos">
 
-                <div class="tarjeta-producto">
+                <div class="tarjeta-producto" data-categoria="lacteos">
                     <img src="/PagInicio/imagenes/imgleche.png" alt="Leche Alpura 1L">
                     <h4>Leche Alpura 1L</h4>
                     <p class="precio">$22.00</p>
                     <button class="btn-agregar">Agregar🛒</button>
                 </div>
 
-                <div class="tarjeta-producto">
+                <div class="tarjeta-producto" data-categoria="abarrotes">
                     <img src="/PagInicio/imagenes/aceite.png" alt="Aceite 1L">
                     <h4>Aceite 1L</h4>
                     <p class="precio">$32.00</p>
                     <button class="btn-agregar">Agregar🛒</button>
                 </div>
 
-                <div class="tarjeta-producto">
-                    <img src="/PagInicio/imagenes/Fuze Tea.webp" alt="Fuze Tea 600ml">
-                    <h4>Fuze Tea 600ml</h4>
+                <div class="tarjeta-producto" data-categoria="bebidas">
+                    <img src="/PagInicio/imagenes/Fuze_Tea.webp" alt="Fuze Tea 600ml">
+                    <h4>Fuze_Tea 600ml</h4>
                     <p class="precio">$20.00</p>
                     <button class="btn-agregar">Agregar🛒</button>
                 </div>
 
 
-                <div class="tarjeta-producto">
+                <div class="tarjeta-producto" data-categoria="botanas">
                     <img src="/PagInicio/imagenes/salsa-valentina.png" alt="Salsa Valentina 370ml">
-                    <h4>Salsa Valentina 370ml</h4>
+                    <h4>Salsa_Valentina 370ml</h4>
                     <p class="precio">$25.00</p>
                     <button class="btn-agregar">Agregar🛒</button>
                 </div>
 
-                <div class="tarjeta-producto">
+                <div class="tarjeta-producto" data-categoria="abarrotes">
                     <img src="/PagInicio/imagenes/catsup.png" alt="Catsup 408g">
                     <h4>Catsup 408g</h4>
                     <p class="precio">$28.00</p>
                     <button class="btn-agregar">Agregar🛒</button>
                 </div>
 
-                <div class="tarjeta-producto">
+                <div class="tarjeta-producto" data-categoria="abarrotes">
                     <img src="/PagInicio/imagenes/mayonesa.webp" alt="Mayonesa McCormick 430g">
-                    <h4>Mayonesa McCormick 430g</h4>
+                    <h4>Mayonesa_McCormick 430g</h4>
                     <p class="precio">$30.00</p>
                     <button class="btn-agregar">Agregar🛒</button>
                 </div>
 
-                <div class="tarjeta-producto">
+                <div class="tarjeta-producto" data-categoria="abarrotes">
                     <img src="/PagInicio/imagenes/pan-bimbo.png" alt="Pan Bimbo Blanco 620g">
-                    <h4>Pan Bimbo Blanco 620g</h4>
+                    <h4>Pan_Bimbo_Blanco 620g</h4>
                     <p class="precio">$32.00</p>
                     <button class="btn-agregar">Agregar🛒</button>
                 </div>
 
-                <div class="tarjeta-producto">
+                <div class="tarjeta-producto" data-categoria="abarrotes">
                     <img src="/PagInicio/imagenes/zucaritas.png" alt="Zucaritas 500g">
                     <h4>Zucaritas 500g</h4>
                     <p class="precio">$45.00</p>
@@ -98,41 +98,10 @@
         </main>
 
     </div>
+
+
+
 </body>
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const enlaces Categorias = document.querySelectorAll(".barra-lateral ul li a");
-  const productos = document.querySelectorAll(".tarjeta-producto"); // Cambia esto por la clase real de tus tarjetas
-
-  enlacesCategorias.forEach(enlace => {
-    enlace.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      // 1. Cambiar la clase activa en el menú lateral
-      enlacesCategorias.forEach(link => link.classList.remove("active"));
-      enlace.classList.add("active");
-
-      // 2. Obtener la categoría seleccionada
-      const categoriaSeleccionada = enlace.getAttribute("data-category");
-
-      // 3. Filtrar los productos
-      productos.forEach(producto => {
-        const categoriaProducto = producto.getAttribute("data-category");
-
-        if (categoriaSeleccionada === "todos" || categoriaProducto === categoriaSeleccionada) {
-          producto.style.display = "block"; // O "flex"/"grid" según uses en tu CSS
-        } else {
-          producto.style.display = "none";
-        }
-      });
-    });
-  });
-});
-
-
-
 
 
 
