@@ -54,6 +54,7 @@
     border: 1px solid #ccc;
     border-radius: 25px;
     margin-bottom: 20px;
+    margin-top: 20px;
     box-sizing: border-box;
 }
 
@@ -104,9 +105,14 @@
     background-color: #2e7d32;
     color: rgba(255, 255, 255, 0.74);
     border: none;
-    padding: 10px 20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left: 10px;
+    padding-right: 10px;
     border-radius: 6px;
+    margin-bottom: 30px;
     cursor: pointer;
+
     width: 100%;
     font-weight: bold;
 }

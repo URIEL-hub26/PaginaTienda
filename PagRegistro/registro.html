@@ -1,34 +1,86 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <div id="header-placeholder"></div>
         <title>Registro</title>
-        <link rel="stylesheet" href="/estilos/estiloRegistro.css">
+        <link rel="stylesheet" href="/estilos/registro.css">
     </head>
     <body>
-        
-        <div class="registro">
-            <h2>Registro de usuario</h2>
-            <p>Complete el siguiente formulario para registrarse:</p>
-        <form action="/PagRegistro/registro.html" method="post">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required><br><br>
+        <div id="header-placeholder"></div>
+<main>
 
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido" required><br><br>
+<div class="container">
+<div class="card">
+<div class="logo">
 
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required><br><br>
+<i class="fa-solid fa-user-plus"></i>
 
-            <label for="contrasena">Contraseña:</label>
-            <input type="password" id="contrasena" name="contrasena" required><br><br>
+<h1>Crear cuenta</h1>
 
-            <input type="submit" value="Registrarse">
-        </form>
-    </div>
-    
+<p>Únete a NovaMart</p>
+
+</div>
+
+<form>
+
+<div class="row">
+
+<div class="input">
+<i class="fa-solid fa-user"></i>
+<input type="text" placeholder="Nombre">
+</div>
+
+<div class="input">
+<i class="fa-solid fa-user"></i>
+<input type="text" placeholder="Apellido">
+</div>
+
+</div>
+
+<div class="input">
+<i class="fa-solid fa-envelope"></i>
+<input type="email" placeholder="Correo electrónico">
+</div>
+
+<div class="input">
+<i class="fa-solid fa-lock"></i>
+<input type="password" placeholder="Contraseña">
+</div>
+
+<div class="terms">
+
+<input type="checkbox">
+
+<label>
+Acepto los <a href="#">Términos y condiciones</a>
+</label>
+
+</div>
+
+<button class="btn">
+Crear cuenta
+</button>
+
+</form>
+
+<div class="switch">
+
+¿Ya tienes una cuenta?
+
+<a href="/PagRegistro/login.html">
+
+Iniciar sesión
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+<div id="footer-placeholder"></div>
     </body>
-    <div id="footer-placeholder"></div>
     <script>
         fetch('../PagHeader/header.html')
         .then(response => response.text())
@@ -38,7 +90,7 @@
         }
         )
         </script>
-        </script>
+
     <script>
         fetch('../PagHeader/footer.html')
         .then(response => response.text())
