@@ -5,9 +5,18 @@
     margin: 20px auto;
     gap: 20px;
     font-family: sans-serif;
+    align-items: flex-start;
+
 }
 
 /* Diseño de la Barra Lateral */
+
+.barra-lateral {
+    position: sticky;
+    top: 20px;
+    align-self: start; 
+}
+
 .barra-lateral {
     width: 250px;
     background-color: #f9f9f9;
