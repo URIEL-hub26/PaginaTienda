@@ -7,29 +7,25 @@
 </head>
 
 <body>
-                <div id="header-placeholder"></div>
+    <div id="header-placeholder"></div>
     <div class="contenedor-catalogo">
 
         <aside class="barra-lateral">
             <h3>Categorías</h3>
             <ul>
-                <li><a href="#" class="active" data-categoria="Todos">Todos</a></li>
-                <li><a href="#" data-categoria="Abarrotes">Abarrotes</a></li>
-                <li><a href="#" data-categoria="Lacteos">Lácteos</a></li>
-                <li><a href="#" data-categoria="Bebidas">Bebidas</a></li>
-                <li><a href="#" data-categoria="Limpieza">Limpieza</a></li>
-                <li><a href="#" data-categoria="Botanas">Botanas</a></li>
-                <li><a href="#" data-categoria="Enlatados">Enlatados</a></li>
-                <li><a href="#" data-categoria="CuidadoPersonal">Cuidado personal</a></li>
+                <li><a href="#" class="active" data-categoria="todos">Todos</a></li>
+                <li><a href="#" data-categoria="abarrotes">Abarrotes</a></li>
+                <li><a href="#" data-categoria="lacteos">Lácteos</a></li>
+                <li><a href="#" data-categoria="bebidas">Bebidas</a></li>
+                <li><a href="#" data-categoria="limpieza">Limpieza</a></li>
+                <li><a href="#" data-categoria="botanas">Botanas</a></li>
+                <li><a href="#" data-categoria="enlatados">Enlatados</a></li>
+                <li><a href="#" data-categoria="cuidadopersonal">Cuidado personal</a></li>
             </ul>
         </aside>
 
         <main class="seccion-productos">
-            <div class="barra-busqueda">
-                <input type="text" placeholder=" 🔍 Busca tu producto...">
 
-
-            </div>
 
             <div class="noton-busqueda">
                 <button class="btn-buscar">Buscar</button>
@@ -38,67 +34,229 @@
 
             <div class="grid-productos">
 
-                <div class="tarjeta-producto">
+                <div class="tarjeta-producto" data-categoria="lacteos">
                     <img src="/PagInicio/imagenes/imgleche.png" alt="Leche Alpura 1L">
                     <h4>Leche Alpura 1L</h4>
                     <p class="precio">$22.00</p>
                     <button class="btn-agregar">Agregar🛒</button>
                 </div>
 
-                <div class="tarjeta-producto">
-                    <img src="/PagInicio/imagenes/aceite.png" alt="Aceite 1L">
+                <div class="tarjeta-producto" data-categoria="lacteos">
+                    <img src="/PagInicio/imagenes/QuesoP.webp" alt="Queso Panela">
+                    <h4>Queso Panela</h4>
+                    <p class="precio">$63.50</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+                </div>
+
+                <div class="tarjeta-producto" data-categoria="abarrotes">
+                    <img src="/PagInicio/imagenes/Aceite.webp" alt="Aceite 1L">
                     <h4>Aceite 1L</h4>
                     <p class="precio">$32.00</p>
                     <button class="btn-agregar">Agregar🛒</button>
                 </div>
 
-                <div class="tarjeta-producto">
+                <div class="tarjeta-producto" data-categoria="botanas">
+                    <img src="/PagInicio/imagenes/Chetos Flamin Hot.webp" alt="Flemin'Hot 240g">
+                    <h4>Flemin'Hot</h4>
+                    <p class="precio">$19.00</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+                </div>
+
+                <div class="tarjeta-producto" data-categoria="botanas">
+                    <img src="/PagInicio/imagenes/CacahuatesJ.webp" alt="Cacahuates Japoneses">
+                    <h4>Cacahuates Japoneses</h4>
+                    <p class="precio">$63.00</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+                </div>
+
+
+                <div class="tarjeta-producto" data-categoria="bebidas">
                     <img src="/PagInicio/imagenes/Fuze Tea.webp" alt="Fuze Tea 600ml">
-                    <h4>Fuze Tea 600ml</h4>
+                    <h4>Fuze_Tea 600ml</h4>
                     <p class="precio">$20.00</p>
                     <button class="btn-agregar">Agregar🛒</button>
                 </div>
 
+                <div class="tarjeta-producto" data-categoria="lacteos">
+                    <img src="/PagInicio/imagenes/QuesoOa.webp" alt="Queso Oaxaca">
+                    <h4>Queso Oaxaca</h4>
+                    <p class="precio">$48.50</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+                </div>
 
-                <div class="tarjeta-producto">
-                    <img src="/PagInicio/imagenes/salsa-valentina.png" alt="Salsa Valentina 370ml">
-                    <h4>Salsa Valentina 370ml</h4>
+                <div class="tarjeta-producto" data-categoria="lacteos">
+                    <img src="/PagInicio/imagenes/Mantequilla.webp" alt="Mantequilla">
+                    <h4>Mantequilla</h4>
+                    <p class="precio">$35.00</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+                </div>
+
+                <div class="tarjeta-producto" data-categoria="bebidas">
+                    <img src="/PagInicio/imagenes/BoingUC.webp" alt="Jugo Boing uva 125ml">
+                    <h4>Jugo Boing uva 125ml</h4>
+                    <p class="precio">$10.00</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+                </div>
+
+                <div class="tarjeta-producto" data-categoria="botanas">
+                    <img src="/PagInicio/imagenes/Salsa Valentina.webp" alt="Salsa Valentina 370ml">
+                    <h4>Salsa_Valentina 370ml</h4>
                     <p class="precio">$25.00</p>
                     <button class="btn-agregar">Agregar🛒</button>
                 </div>
 
-                <div class="tarjeta-producto">
-                    <img src="/PagInicio/imagenes/catsup.png" alt="Catsup 408g">
-                    <h4>Catsup 408g</h4>
+                <div class="tarjeta-producto" data-categoria="abarrotes">
+                    <img src="/PagInicio/imagenes/Catsu.webp" alt="Catsup 608g">
+                    <h4>Catsup 608g</h4>
                     <p class="precio">$28.00</p>
                     <button class="btn-agregar">Agregar🛒</button>
                 </div>
 
-                <div class="tarjeta-producto">
+                <div class="tarjeta-producto" data-categoria="bebidas">
+                    <img src="/PagInicio/imagenes/BoingUG.webp" alt="Jugo Boing uva 500ml">
+                    <h4>Jugo Boing uva 500ml</h4>
+                    <p class="precio">$17.00</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+                </div>
+
+                <div class="tarjeta-producto" data-categoria="abarrotes">
                     <img src="/PagInicio/imagenes/mayonesa.webp" alt="Mayonesa McCormick 430g">
-                    <h4>Mayonesa McCormick 430g</h4>
+                    <h4>Mayonesa_McCormick 430g</h4>
                     <p class="precio">$30.00</p>
                     <button class="btn-agregar">Agregar🛒</button>
                 </div>
 
-                <div class="tarjeta-producto">
-                    <img src="/PagInicio/imagenes/pan-bimbo.png" alt="Pan Bimbo Blanco 620g">
-                    <h4>Pan Bimbo Blanco 620g</h4>
+                <div class="tarjeta-producto" data-categoria="abarrotes">
+                    <img src="/PagInicio/imagenes/Pan Bimbo.webp" alt="Pan Bimbo Blanco 680g">
+                    <h4>Pan_Bimbo_Blanco 680g</h4>
                     <p class="precio">$32.00</p>
                     <button class="btn-agregar">Agregar🛒</button>
                 </div>
 
-                <div class="tarjeta-producto">
-                    <img src="/PagInicio/imagenes/zucaritas.png" alt="Zucaritas 500g">
+                <div class="tarjeta-producto" data-categoria="bebidas">
+                    <img src="/PagInicio/imagenes/BoingMag.webp" alt="Jugo Boing Mango 500ml">
+                    <h4>Jugo Boing Mango 500ml</h4>
+                    <p class="precio">$17.00</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+                </div>
+
+                <div class="tarjeta-producto" data-categoria="bebidas">
+                    <img src="/PagInicio/imagenes/FantaLat.webp" alt="Fanta Lata 500ml">
+                    <h4>Fanta Lata 500ml</h4>
+                    <p class="precio">$22.00</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+                </div>
+
+                <div class="tarjeta-producto" data-categoria="abarrotes">
+                    <img src="/PagInicio/imagenes/Pan Bimbo Integral.webp" alt="Pan Bimbo Integral 620g">
+                    <h4>Pan_Bimbo_Integral 620g</h4>
+                    <p class="precio">$35.00</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+
+                </div>
+
+                <div class="tarjeta-producto" data-categoria="limpieza">
+                    <img src="/PagInicio/imagenes/JabonBoltG.webp" alt="Jabon Bold 5k">
+                    <h4>Jabon Bold 5k</h4>
+                    <p class="precio">$89.90</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+                </div>
+
+                <div class="tarjeta-producto" data-categoria="abarrotes">
+                    <img src="/PagInicio/imagenes/Arroz.webp" alt="Arroz 1kg">
+                    <h4>Arroz 1kg</h4>
+                    <p class="precio">$37.00</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+                </div>
+
+                <div class="tarjeta-producto" data-categoria="abarrotes">
+                    <img src="/PagInicio/imagenes/Frijol V..webp" alt="Frijol 1kg">
+                    <h4>Frijol 1kg</h4>
+                    <p class="precio">$32.00</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+                </div>
+
+                <div class="tarjeta-producto" data-categoria="limpieza">
+                    <img src="/PagInicio/imagenes/JabonBoltC.webp" alt="Jabon Bold 850g">
+                    <h4>Jabon Bold 850g</h4>
+                    <p class="precio">$48.50</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+                </div>
+
+                <div class="tarjeta-producto" data-categoria="abarrotes">
+                    <img src="/PagInicio/imagenes/Spaghuetti.webp" alt="Spaghuetti 450g">
+                    <h4>Spaghuetti 450g</h4>
+                    <p class="precio">$30.50</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+                </div>
+
+                <div class="tarjeta-producto" data-categoria="abarrotes">
+                    <img src="/PagInicio/imagenes/Sal Salada.webp" alt="Sal Natural">
+                    <h4>Sal Natural</h4>
+                    <p class="precio">$39.00</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+                </div>
+
+                <div class="tarjeta-producto" data-categoria="limpieza">
+                    <img src="/PagInicio/imagenes/JabonACE.webp" alt="Jabon ACE 250g">
+                    <h4>Jabon ACE 250g</h4>
+                    <p class="precio">$38.90</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+                </div>
+
+                <div class="tarjeta-producto" data-categoria="limpieza">
+                    <img src="/PagInicio/imagenes/Jabon Zote.webp" alt="Jabon Zote 400g">
+                    <h4>Jabon Zote 400g</h4>
+                    <p class="precio">$14.50</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+                </div>
+
+                <div class="tarjeta-producto" data-categoria="limpieza">
+                    <img src="/PagInicio/imagenes/Cloro.webp" alt="Cloro 950ml">
+                    <h4>Cloro 950ml</h4>
+                    <p class="precio">$23.50</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+                </div>
+
+
+                <div class="tarjeta-producto" data-categoria="abarrotes">
+                    <img src="/PagInicio/imagenes/Zucaritas.webp" alt="Zucaritas 500g">
                     <h4>Zucaritas 500g</h4>
+                    <p class="precio">$50.00</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+                </div>
+
+                <div class="tarjeta-producto" data-categoria="abarrotes">
+                    <img src="/PagInicio/imagenes/CerealTrix.webp" alt="Cereal Trix 430g">
+                    <h4>Cereal Trix 430g</h4>
                     <p class="precio">$45.00</p>
                     <button class="btn-agregar">Agregar🛒</button>
                 </div>
+
+                <div class="tarjeta-producto" data-categoria="abarrotes">
+                    <img src="/PagInicio/imagenes/CerealChoco.webp" alt="Cereal Choco 350g">
+                    <h4>Cereal Choco 350g</h4>
+                    <p class="precio">$40.00</p>
+                    <button class="btn-agregar">Agregar🛒</button>
+                </div>
+
+
             </div>
         </main>
 
     </div>
+
+
+
 </body>
+
+
+
+
+
+
+
+
 
 <div id="footer-placeholder"></div>
 <script>
