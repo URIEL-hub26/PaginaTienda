@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Promociones | NovaMart</title>
+
+    <link rel="stylesheet" href="/estilos/estiloPromociones.css">
+</head>
+
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+
+        <section class="hero">
+
+            <h1>🎉 Promociones de la Semana</h1>
+
+            <p>
+
+                Aprovecha increíbles descuentos en cientos de productos.
+
+            </p>
+
+            <a href="#ofertas" class="btn">
+
+                Ver ofertas
+
+            </a>
+
+        </section>
+
+        <section id="ofertas" class="ofertas">
+
+            <h2>🔥 Ofertas destacadas</h2>
+
+            <div class="grid">
+
+                <div class="card">
+
+                    <span class="descuento">-24%</span>
+
+                    <img src="/PagInicio/imagenes/Arroz.webp" alt="Arroz">
+
+                    <h3>Arroz 1 Kg</h3>
+
+                    <p class="antes">$50.00</p>
+
+                    <p class="precio">$38.00</p>
+
+                </div>
+
+                <div class="card">
+
+                    <span class="descuento">-21%</span>
+
+                    <img src="/PagInicio/imagenes/Aceite C.webp" alt="Aceite">
+
+                    <h3>Aceite 1L</h3>
+
+                    <p class="antes">$70.00</p>
+
+                    <p class="precio">$55.00</p>
+
+                </div>
+
+                <div class="card">
+
+                    <span class="descuento">-28%</span>
+
+                    <img src="/PagInicio/imagenes/FantaLat.webp" alt="Refresco">
+
+                    <h3>Refresco 600ml</h3>
+
+                    <p class="antes">$25.00</p>
+
+                    <p class="precio">$18.00</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="beneficios">
+
+            <h2>⭐ Promociones Especiales</h2>
+
+            <div class="beneficios-grid">
+
+                <div>
+
+                    <i class="fa-solid fa-gift"></i>
+
+                    <h3>Compra 2 y lleva 3</h3>
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-truck"></i>
+
+                    <h3>Envío gratis desde $200</h3>
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-apple-whole"></i>
+
+                    <h3>15% en frutas y verduras</h3>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+
+        fetch('/PagHeader/header.html')
+        .then(r=>r.text())
+        .then(data=>{
+            document.getElementById("header-placeholder").innerHTML=data;
+        });
+
+        fetch('/PagHeader/footer.html')
+        .then(r=>r.text())
+        .then(data=>{
+            document.getElementById("footer-placeholder").innerHTML=data;
+        });
+
+    </script>
+
+            <div id="footer-placeholder"></div>
+            </body>
+            <script>
+        fetch('../PagHeader/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+    </script>
+
+    <script>
+        fetch('../PagHeader/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+    </script>

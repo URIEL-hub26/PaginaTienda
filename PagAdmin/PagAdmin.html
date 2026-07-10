@@ -4,12 +4,11 @@
 <head>
     <title>Panel de Administración</title>
 
-    <link rel="stylesheet" href="/estilos/estiloAdmin.css">
+    <link rel="stylesheet" href="/estilos/estiloAdmn.css">
 
 </head>
 
 <body>
-    <div id="header-placeholder"></div>
 
 <div class="dashboard">
 
@@ -69,7 +68,7 @@
 
             <h1>Dashboard</h1>
 
-            <div class="admin">
+            <div class="usuario">
 
                 <i class="fa-solid fa-user"></i>
 
@@ -123,7 +122,7 @@
 
         </section>
 
-        <section class="inventario">
+        <section class="tabla">
 
             <h2>Productos con poco inventario</h2>
 
@@ -176,29 +175,7 @@
     </main>
 
 </div>
-<div id="footer-placeholder"></div>
 
 </body>
-
-<div id="footer-placeholder"></div>
-<script>
-    fetch('../PagHeader/header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById
-                ('header-placeholder').innerHTML = data;
-        }
-        )
-</script>
-<script>
-    fetch('../PagHeader/footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById
-                ('footer-placeholder').innerHTML = data;
-        }
-        )
-</script>
-
 
 </html>

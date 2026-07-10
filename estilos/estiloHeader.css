@@ -5,7 +5,6 @@ body {
     color: #20242c;
 }
 
-<<<<<<< HEAD
 /*
 LOGO
 */
@@ -133,22 +132,25 @@ ICONOS
 
     transform:translateY(-3px);
 
-}header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background: #fff;
+}header{
 
-=======
-/* BANNER PRINCIPAL */
-#banner {
->>>>>>> 9d5edfd394c166f8817ec449ad4c13836f2b177f
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 50px 80px;
-    min-height: 500px;
-    background-color: #eef7ee;
+    position:sticky;
+    top:0;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    width:100%;
+
+    padding:15px 60px;
+
+    background:white;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+    z-index:1000;
+
 }
 
 #texto-banner {
@@ -229,7 +231,6 @@ ICONOS
     color: #20242c;
 }
 
-<<<<<<< HEAD
 /* Enlaces del menú */
 .menu a {
     height: 55px;
@@ -386,10 +387,3 @@ ICONOS
     margin-top: 20px;
     box-sizing: border-box;
 }
-=======
-#descripcion p {
-    font-size: 18px;
-    color: #5f5f5f;
-    line-height: 1.5;
-}
->>>>>>> 9d5edfd394c166f8817ec449ad4c13836f2b177f

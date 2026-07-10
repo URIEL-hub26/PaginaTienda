@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Carrito de compras</title>
-    <link rel="stylesheet" href="/Proyecto Tienda/PaginaTienda/estilos/estiloCarrito.css">
+    <link rel="stylesheet" href="/estilos/estiloCarrito.css">
 </head>
 <body>
+        <div id="header-placeholder"></div>
+        <br></br>
 
     <section class="contenedor-carrito">
 
@@ -76,4 +78,21 @@
     </section>
 
 </body>
+ <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('../PagHeader/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+    </script>
+
+    <script>
+        fetch('../PagHeader/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+    </script>
 </html>
