@@ -2,21 +2,21 @@
         GENERAL
 ==================================*/
 
-.contenedor-catalogo{
+.contenedor-catalogo {
 
-    display:flex;
+    display: flex;
 
-    max-width:1200px;
+    max-width: 1200px;
 
-    margin:20px auto;
+    margin: 20px auto;
 
-    gap:25px;
+    gap: 25px;
 
-    padding:0 20px;
+    padding: 0 20px;
 
-    align-items:flex-start;
+    align-items: flex-start;
 
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 
@@ -24,75 +24,75 @@
         BARRA LATERAL
 ==================================*/
 
-.barra-lateral{
+.barra-lateral {
 
-    width:260px;
+    width: 260px;
 
-    background:#f9f9f9;
+    background: #f9f9f9;
 
-    border:1px solid #e0e0e0;
+    border: 1px solid #e0e0e0;
 
-    border-radius:10px;
+    border-radius: 10px;
 
-    padding:20px;
+    padding: 20px;
 
-    position:sticky;
+    position: sticky;
 
-    top:20px;
+    top: 20px;
 
-    flex-shrink:0;
-
-}
-
-.barra-lateral h3{
-
-    margin-top:0;
-
-    margin-bottom:15px;
-
-    color:#333;
+    flex-shrink: 0;
 
 }
 
-.barra-lateral ul{
+.barra-lateral h3 {
 
-    list-style:none;
+    margin-top: 0;
 
-    padding:0;
+    margin-bottom: 15px;
 
-}
-
-.barra-lateral li{
-
-    margin-bottom:8px;
+    color: #333;
 
 }
 
-.barra-lateral a{
+.barra-lateral ul {
 
-    display:block;
+    list-style: none;
 
-    padding:10px;
+    padding: 0;
 
-    border-radius:6px;
+}
 
-    text-decoration:none;
+.barra-lateral li {
 
-    color:#555;
+    margin-bottom: 8px;
 
-    transition:.3s;
+}
+
+.barra-lateral a {
+
+    display: block;
+
+    padding: 10px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    color: #555;
+
+    transition: .3s;
 
 }
 
 .barra-lateral a:hover,
 
-.barra-lateral a.active{
+.barra-lateral a.active {
 
-    background:#E8F5E9;
+    background: #E8F5E9;
 
-    color:#2E7D32;
+    color: #2E7D32;
 
-    font-weight:bold;
+    font-weight: bold;
 
 }
 
@@ -100,11 +100,11 @@
         CONTENIDO
 ==================================*/
 
-.seccion-productos{
+.seccion-productos {
 
-    flex:1;
+    flex: 1;
 
-    min-width:0;
+    min-width: 0;
 
 }
 
@@ -112,37 +112,37 @@
         BUSCADOR
 ==================================*/
 
-.barra-busqueda{
+.barra-busqueda {
 
-    display:flex;
+    display: flex;
 
-    gap:10px;
+    gap: 10px;
 
-    margin:20px 0;
-
-}
-
-.barra-busqueda input{
-
-    flex:1;
-
-    padding:12px 18px;
-
-    border:1px solid #ccc;
-
-    border-radius:30px;
-
-    outline:none;
-
-    transition:.3s;
+    margin: 20px 0;
 
 }
 
-.barra-busqueda input:focus{
+.barra-busqueda input {
 
-    border-color:#2E7D32;
+    flex: 1;
 
-    box-shadow:0 0 0 3px rgba(46,125,50,.15);
+    padding: 12px 18px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 30px;
+
+    outline: none;
+
+    transition: .3s;
+
+}
+
+.barra-busqueda input:focus {
+
+    border-color: #2E7D32;
+
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, .15);
 
 }
 
@@ -150,29 +150,31 @@
         BOTÓN BUSCAR
 ==================================*/
 
-.btn-buscar{
+.btn-buscar {
 
-    background:#2E7D32;
+    background: #2E7D32;
 
-    color:white;
+    margin: bottom 10px;
 
-    border:none;
+    color: white;
 
-    padding:12px 22px;
+    border: none;
 
-    border-radius:30px;
+    padding: 12px 22px;
 
-    cursor:pointer;
+    border-radius: 20px;
 
-    font-weight:bold;
+    cursor: pointer;
 
-    transition:.3s;
+    font-weight: bold;
+
+    transition: .3s;
 
 }
 
-.btn-buscar:hover{
+.btn-buscar:hover {
 
-    background:#1B5E20;
+    background: #1B5E20;
 
 }
 
@@ -180,13 +182,13 @@
         GRID PRODUCTOS
 ==================================*/
 
-.grid-productos{
+.grid-productos {
 
-    display:grid;
+    display: grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 
-    gap:25px;
+    gap: 25px;
 
 }
 
@@ -194,93 +196,93 @@
         TARJETAS
 ==================================*/
 
-.tarjeta-producto{
+.tarjeta-producto {
 
-    background:white;
+    background: white;
 
-    border:1px solid #ededed;
+    border: 1px solid #ededed;
 
-    border-radius:15px;
+    border-radius: 15px;
 
-    padding:20px;
+    padding: 20px;
 
-    text-align:center;
+    text-align: center;
 
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
 
-    transition:.3s;
-
-}
-
-.tarjeta-producto:hover{
-
-    transform:translateY(-6px);
-
-    box-shadow:0 12px 25px rgba(0,0,0,.12);
+    transition: .3s;
 
 }
 
-.tarjeta-producto img{
+.tarjeta-producto:hover {
 
-    width:100%;
+    transform: translateY(-6px);
 
-    max-width:170px;
-
-    height:150px;
-
-    object-fit:contain;
-
-    margin-bottom:15px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, .12);
 
 }
 
-.tarjeta-producto h4{
+.tarjeta-producto img {
 
-    color:#333;
+    width: 100%;
 
-    margin:10px 0;
+    max-width: 170px;
 
-    font-size:17px;
+    height: 150px;
 
-}
+    object-fit: contain;
 
-.precio{
-
-    color:#2E7D32;
-
-    font-size:22px;
-
-    font-weight:bold;
-
-    margin-bottom:18px;
+    margin-bottom: 15px;
 
 }
 
-.btn-agregar{
+.tarjeta-producto h4 {
 
-    width:100%;
+    color: #333;
 
-    border:none;
+    margin: 10px 0;
 
-    background:#2E7D32;
-
-    color:white;
-
-    padding:12px;
-
-    border-radius:8px;
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-    transition:.3s;
+    font-size: 17px;
 
 }
 
-.btn-agregar:hover{
+.precio {
 
-    background:#1B5E20;
+    color: #2E7D32;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    margin-bottom: 18px;
+
+}
+
+.btn-agregar {
+
+    width: 100%;
+
+    border: none;
+
+    background: #2E7D32;
+
+    color: white;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: .3s;
+
+}
+
+.btn-agregar:hover {
+
+    background: #1B5E20;
 
 }
 
@@ -288,25 +290,25 @@
         TABLETS
 ==================================*/
 
-@media(max-width:992px){
+@media(max-width:992px) {
 
-.contenedor-catalogo{
+    .contenedor-catalogo {
 
-    gap:20px;
+        gap: 20px;
 
-}
+    }
 
-.barra-lateral{
+    .barra-lateral {
 
-    width:220px;
+        width: 220px;
 
-}
+    }
 
-.grid-productos{
+    .grid-productos {
 
-    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
 
-}
+    }
 
 }
 
@@ -314,41 +316,41 @@
         CELULARES
 ==================================*/
 
-@media(max-width:768px){
+@media(max-width:768px) {
 
-.contenedor-catalogo{
+    .contenedor-catalogo {
 
-    flex-direction:column;
+        flex-direction: column;
 
-}
+    }
 
-.barra-lateral{
+    .barra-lateral {
 
-    position:relative;
+        position: relative;
 
-    width:100%;
+        width: 100%;
 
-    top:0;
+        top: 0;
 
-}
+    }
 
-.barra-busqueda{
+    .barra-busqueda {
 
-    flex-direction:column;
+        flex-direction: column;
 
-}
+    }
 
-.btn-buscar{
+    .btn-buscar {
 
-    width:100%;
+        width: 100%;
 
-}
+    }
 
-.grid-productos{
+    .grid-productos {
 
-    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
 
-}
+    }
 
 }
 
@@ -356,24 +358,24 @@
         CELULARES PEQUEÑOS
 ==================================*/
 
-@media(max-width:480px){
+@media(max-width:480px) {
 
-.grid-productos{
+    .grid-productos {
 
-    grid-template-columns:1fr;
+        grid-template-columns: 1fr;
 
-}
+    }
 
-.tarjeta-producto img{
+    .tarjeta-producto img {
 
-    max-width:140px;
+        max-width: 140px;
 
-}
+    }
 
-.tarjeta-producto{
+    .tarjeta-producto {
 
-    padding:18px;
+        padding: 18px;
 
-}
+    }
 
 }
