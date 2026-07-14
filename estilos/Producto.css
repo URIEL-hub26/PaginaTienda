@@ -1,0 +1,25 @@
+/* 1. El contenedor que corta el desborde */
+.ofertas-container {
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto;
+    overflow: hidden; 
+    padding: 20px 10px; 
+}
+
+/* 2. La pista donde se alinean */
+.ofertas-track {
+    display: flex;
+    flex-wrap: nowrap; 
+    gap: 20px; 
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+/* 3. Tus tarjetas dentro del carrusel */
+.ofertas-track .card {
+    flex: 0 0 calc(25% - 15px); /* Toma el 25% del espacio disponible */
+    min-width: 250px; 
+    flex-shrink: 0; /* 🔥 OBLIGATORIO: Le prohíbe a la tarjeta encogerse o deformarse */
+    box-sizing: border-box;
+}

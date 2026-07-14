@@ -17,12 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
             productos.forEach(producto => {
                 
                 const categoriaProducto = producto.getAttribute("data-categoria");
-
-               
+                               
                 if (categoriaSeleccionada === "todos" || categoriaProducto === categoriaSeleccionada) {
                     producto.style.display = ""; 
                 } else {
-                   
                     producto.style.display = "none";
                 }
             });
