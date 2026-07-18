@@ -1,4 +1,3 @@
-
 const tarjetas = document.querySelectorAll('#descripcion > div');
 let indice = 0;
 
@@ -30,3 +29,27 @@ function flotarImagen() {
 }
 
 setInterval(flotarImagen, 30);
+
+const testimonios = [
+    { nombre: "María G.", texto: "Excelente servicio, llegó a tiempo", estrellas: "⭐⭐⭐⭐⭐" },
+    { nombre: "Carlos R.", texto: "Productos de buena calidad", estrellas: "⭐⭐⭐⭐" },
+    { nombre: "Ana L.", texto: "Muy recomendable, compraré de nuevo", estrellas: "⭐⭐⭐⭐⭐" },
+    { nombre: "Pedro M.", texto: "Los precios son muy accesibles", estrellas: "⭐⭐⭐⭐" }
+];
+
+let testimonioActual = 0;
+
+function cambiarTestimonio() {
+    testimonioActual = (testimonioActual + 1) % testimonios.length;
+    const testimonio = testimonios[testimonioActual];
+    
+    const testimonioTexto = document.querySelector('.testimonio-texto');
+    const testimonioNombre = document.querySelector('.testimonio-nombre');
+    const testimonioEstrellas = document.querySelector('.testimonio-estrellas');
+    
+    if (testimonioTexto) testimonioTexto.textContent = `"${testimonio.texto}"`;
+    if (testimonioNombre) testimonioNombre.textContent = `- ${testimonio.nombre}`;
+    if (testimonioEstrellas) testimonioEstrellas.textContent = testimonio.estrellas;
+}
+
+setInterval(cambiarTestimonio, 4000);

@@ -190,6 +190,53 @@ body{
     line-height:1.6;
 
 }
+#testimonios{
+    background: #f8f9fa;
+    padding: 50px clamp(20px,5vw,40px);
+    text-align: center;
+    margin: 0;
+}
+
+#testimonios h2{
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+#testimonios .testimonio{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+#testimonios .testimonio:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+#testimonios .testimonio-estrellas{
+    font-size: 30px;
+    margin: 0;
+    color: #f4c542;
+}
+
+#testimonios .testimonio-texto{
+    font-size: 20px;
+    color: #555;
+    font-style: italic;
+    margin: 15px 0;
+}
+
+#testimonios .testimonio-nombre{
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0 0 0;
+}
+
 
 /*==================================
         TABLETS
