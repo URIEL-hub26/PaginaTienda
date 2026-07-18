@@ -5,10 +5,9 @@ function ciclarTarjetas() {
     tarjetas.forEach(tarjeta => {
         tarjeta.style.display = 'none';
     });
-    
-}
-    tarjetas[indice].style.display = '';
+    tarjetas[indice].style.display = 'block';
     indice = (indice + 1) % tarjetas.length;
+}
 
 if (tarjetas.length > 0) {
     ciclarTarjetas(); 
