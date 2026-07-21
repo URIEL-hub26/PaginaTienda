@@ -49,65 +49,116 @@ main{
 }
 
 /*=========================
-        HERO
+    CARRUSEL
 =========================*/
 
-.hero{
-
-    background:linear-gradient(135deg,#2E7D32,#43A047);
-
-    color:white;
-
-    text-align:center;
-
-    padding:80px 20px;
-
+.banner-slider{
+    position: relative;
+    background: #388E3C;
+    height: 330px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.hero h1{
-
-    font-size:48px;
-
-    margin-bottom:20px;
-
+.slide{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: white;
+    opacity: 0;
+    transition: opacity .6s ease;
+    padding: 0 20px;
 }
 
-.hero p{
-
-    font-size:20px;
-
-    margin-bottom:35px;
-
+.slide.active{
+    opacity: 1;
 }
 
-.btn{
+.slide h1{
+    font-size: 52px;
+    margin-bottom: 25px;
+}
 
+.slide p{
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.btn-banner{
     display:inline-block;
-
     text-decoration:none;
-
     background:white;
-
     color:var(--primary);
-
-    padding:15px 35px;
-
+    padding:16px 42px;
     border-radius:50px;
-
     font-weight:600;
-
     transition:.3s;
-
 }
 
-.btn:hover{
-
+.btn-banner:hover{
     transform:translateY(-4px);
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
 
-    box-shadow:0 10px 20px rgba(0,0,0,.2);
+.indicadores{
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:12px;
+}
+
+.indicadores span{
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background:rgba(255,255,255,.4);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.indicadores span.active{
+    background:white;
+}
+
+/*=========================
+    ESPONSIVE
+=========================*/
+
+@media(max-width:900px){
+
+    .slide h1{
+        font-size:38px;
+    }
+
+    .slide p{
+        font-size:20px;
+    }
 
 }
 
+@media(max-width:600px){
+
+    .banner-slider{
+        height:280px;
+    }
+
+    .slide h1{
+        font-size:28px;
+    }
+
+    .slide p{
+        font-size:18px;
+    }
+
+    .btn-banner{
+        padding:14px 30px;
+    }
+
+}
 /*=========================
     OFERTAS
 =========================*/
