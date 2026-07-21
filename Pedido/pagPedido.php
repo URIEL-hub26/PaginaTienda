@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Confirmación de pedido</title>
+    <link rel="stylesheet" href="../estilos/estiloFooter.css">
+        <link rel="stylesheet" href="../estilos/estiloHeader.css">
 
-    <link rel="stylesheet" href="/estilos/estiloPedido.css">
+    <link rel="stylesheet" href="../estilos/estiloPedido.css">
+
 </head>
 
 <body>

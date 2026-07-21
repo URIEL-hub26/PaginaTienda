@@ -2,7 +2,9 @@
 <html>
     <head>
         <title>Iniciar sesión</title>
-        <link rel="stylesheet" href="/estilos/estiloLogin.css">
+        <link rel="stylesheet" href="../estilos/estiloLogin.css">
+        <link rel="stylesheet" href="../estilos/estiloFooter.css">
+        <link rel="stylesheet" href="../estilos/estiloHeader.css">
 
     </head>
     <body>
@@ -77,7 +79,7 @@
 
             ¿No tienes una cuenta?
 
-            <a href="registro.html">
+            <a href="registro.php">
 
                 Crear cuenta
 
@@ -94,7 +96,7 @@
 
 </body>
    <script>
-fetch('/PagHeader/header.html')
+fetch('../PagHeader/header.html')
 .then(response => response.text())
 .then(data => {
     document.getElementById('header-placeholder').innerHTML = data;

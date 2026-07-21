@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>NovaMart</title>
+<link rel="stylesheet" href="../estilos/estiloFooter.css">
+<link rel="stylesheet" href="../estilos/estiloHeader.css">   
+
     <link rel="stylesheet" href="../estilos/estiloPagPrincipal.css">
 </head>
 
@@ -17,7 +20,7 @@
                     Tu tienda de <br> abarrotes <span>en línea</span>
                 </h1>
                 <p>Compra fácil, rápido y desde la <br> comodidad de tu hogar.</p>
-                <a href="../PagProductos/Productos.html">Ver productos</a>
+                <a href="../PagProductos/Productos.php">Ver productos</a>
             </div>
             <div id="imagen-banner">
                 <img src="imagenes/logo.jpeg" alt="Canasta de abarrotes">
@@ -52,7 +55,7 @@
     </main>
     <div id="footer-placeholder"></div>
 
-    <script src="/PagInicio/prin.js"></script>
+    <script src="prin.js"></script>
 
 
 

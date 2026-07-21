@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Carrito de compras</title>
-    <link rel="stylesheet" href="/estilos/estiloCarrito.css">
+    <link rel="stylesheet" href="../estilos/estiloCarrito.css">
+    <link rel="stylesheet" href="../estilos/estiloFooter.css">
+        <link rel="stylesheet" href="../estilos/estiloHeader.css">
 </head>
 <body>
         <div id="header-placeholder"></div>
@@ -69,7 +71,7 @@
             </div>
         </div>
 
-        <button class="btn-comprar" onclick="window.location.href='/Pedido/pagPedido.html'">
+        <button class="btn-comprar" onclick="window.location.href='../Pedido/pagPedido.php'">
             Continuar compra
         </button>
 

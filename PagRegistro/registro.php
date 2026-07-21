@@ -2,7 +2,9 @@
 <html>
     <head>
         <title>Registro</title>
-        <link rel="stylesheet" href="/estilos/registro.css">
+        <link rel="stylesheet" href="../estilos/registro.css">
+        <link rel="stylesheet" href="../estilos/estiloFooter.css">
+        <link rel="stylesheet" href="../estilos/estiloHeader.css">
     </head>
     <body>
         <div id="header-placeholder"></div>
@@ -66,7 +68,7 @@ Crear cuenta
 
 ¿Ya tienes una cuenta?
 
-<a href="/PagRegistro/login.html">
+<a href="login.php">
 
 Iniciar sesión
 

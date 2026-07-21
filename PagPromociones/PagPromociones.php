@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Promociones | NovaMart</title>
-    <link rel="stylesheet" href="/estilos/estiloPromociones.css">
+    <link rel="stylesheet" href="../estilos/estiloPromociones.css">
+    <link rel="stylesheet" href="../estilos/estiloFooter.css">
+        <link rel="stylesheet" href="../estilos/estiloHeader.css">
 </head>
 
 <body>
@@ -49,7 +51,7 @@
 
                     <span class="descuento">-24%</span>
 
-                    <img src="/PagInicio/imagenes/Arroz.webp" alt="Arroz">
+                    <img src="../PagInicio/imagenes/Arroz.webp" alt="Arroz">
 
                     <h3>Arroz 1 Kg</h3>
 
@@ -63,7 +65,7 @@
 
                     <span class="descuento">-27%</span>
 
-                    <img src="/PagInicio/imagenes/JabonBoltG.webp" alt="Jabón Bold">
+                    <img src="../PagInicio/imagenes/JabonBoltG.webp" alt="Jabón Bold">
 
                     <h3>Jabon Bold</h3>
 
@@ -77,7 +79,7 @@
 
                     <span class="descuento">-30%</span>
 
-                    <img src="/PagInicio/imagenes/Salsa Valentina.webp" alt="Salsa Valentina">
+                    <img src="../PagInicio/imagenes/Salsa Valentina.webp" alt="Salsa Valentina">
 
                     <h3>Salsa Valentina </h3>
 
@@ -91,7 +93,7 @@
 
                     <span class="descuento">-21%</span>
 
-                    <img src="/PagInicio/imagenes/Aceite C.webp" alt="Aceite">
+                    <img src="../PagInicio/imagenes/Aceite C.webp" alt="Aceite">
 
                     <h3>Aceite 1L</h3>
 
@@ -105,7 +107,7 @@
 
                     <span class="descuento">-28%</span>
 
-                    <img src="/PagInicio/imagenes/FantaLat.webp" alt="Refresco">
+                    <img src="../PagInicio/imagenes/FantaLat.webp" alt="Refresco">
 
                     <h3>Refresco 600ml</h3>
 
@@ -152,17 +154,17 @@
 
     <div id="footer-placeholder"></div>
 
-    <script src="/PagPromociones/Prom.js"></script>
+    <script src="Prom.js"></script>
 
     <script>
 
-        fetch('/PagHeader/header.html')
+        fetch('../PagHeader/header.html')
             .then(r => r.text())
             .then(data => {
                 document.getElementById("header-placeholder").innerHTML = data;
             });
 
-        fetch('/PagHeader/footer.html')
+        fetch('../PagHeader/footer.html')
             .then(r => r.text())
             .then(data => {
                 document.getElementById("footer-placeholder").innerHTML = data;
@@ -189,7 +191,7 @@ function configurarBusquedaInicio() {
                     // Guardamos el término en la memoria del navegador
                     localStorage.setItem('terminoBusqueda', texto);
                     // Redirigimos a la sección de productos
-                    window.location.href = "../PagProductos/Productos.html";
+                    window.location.href = "../PagProductos/Productos.php";
                 }
             }
         });
