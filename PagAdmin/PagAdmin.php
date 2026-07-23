@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>NovaMart Admin</title>
+    <link rel="stylesheet" href="../estilos/estiloAdmn.css">
+    <link rel="stylesheet" href="../estilos/estiloFooter.css">
+    <link rel="stylesheet" href="../estilos/estiloHeader.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <aside>
+        <h2>🛒 NovaMart</h2>
+        <ul>
+            <li onclick="show('dashboard')">Dashboard</li>
+            <li onclick="show('productos')">Productos</li>
+            <li onclick="show('usuarios')">Usuarios</li>
+            <li onclick="show('pedidos')">Pedidos</li>
+            <li onclick="show('reportes')">Reportes</li>
+            <li onclick="show('config')">Configuración</li>
+        </ul>
+    </aside>
+    <main>
+        <section id="dashboard" class="active">
+            <h1>Dashboard</h1>
+            <div class="cards">
+                <div class="card">
+                    <h3>Productos</h3>
+                    <h2>250</h2>
+                </div>
+                <div class="card">
+                    <h3>Ventas</h3>
+                    <h2>75</h2>
+                </div>
+                <div class="card">
+                    <h3>Clientes</h3>
+                    <h2>120</h2>
+                </div>
+                <div class="card">
+                    <h3>Ingresos</h3>
+                    <h2>$15,240</h2>
+                </div>
+            </div>
+        </section>
+        <section id="productos">
+            <h1>Productos</h1>
+            <input id="buscar" placeholder="Buscar..." onkeyup="busacarProducto()">
+            <button onclick="agregarProducto()">Agregar producto</button>
+            <table id="tabla">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+        <section id="usuarios">
+            <h1>Usuarios</h1>
+        </section>
+        <section id="pedidos">
+            <h1>Pedidos</h1>
+        </section>
+        <section id="reportes">
+            <h1>Reportes</h1><canvas id="grafica"></canvas>
+        </section>
+        <section id="config">
+            <h1>Configuración</h1>
+        </section>
+    </main>
+    <script src="admin.js"></script>
+</body>
+
+</html>

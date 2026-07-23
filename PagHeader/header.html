@@ -1,22 +1,31 @@
 <header>
-    <link rel="stylesheet" href="/estilos/estiloHeader.css">
+    <link rel="stylesheet" href="../estilos/estiloHeader.css">
     <div class="logo">
         <h2>🛒NovaMart</h2>
     </div>
-    <nav>
-        <ul>
-            <li><a href="/PagInicio/index.html">Inicio</a></li>
-            <li><a href="/PagProductos/productos.html">Productos</a></li>
-            <li><a href="/PagPromociones/promociones.html">Promociones</a></li>
-            <li><a href="/PagNosotros/nosotros.html">Nosotros</a></li>
-        </ul>
+    <nav class="menu">
+
+    <a href="../PagInicio/index.php">Inicio</a>
+    <a href="../PagProductos/Productos.php">Productos</a>
+    <a href="../PagPromociones/PagPromociones.php">Promociones</a>
+    <div class="barra-busqueda">
+                <input type="text" id="input-busqueda"placeholder=" 🔍 Busca tu producto...">
+
+
+            </div>
+
+
+    <span></span>
     </nav>
 
     <div class="iconos">
-        <a href="buscar.html">🔍</a>
-        <a href="carrito.html">🛒</a>
-        <a href="login.html">👤</a>
-        <a href="/PagRegistro/registro.html">📝</a>
-    </div>
+    
+    <a href="../Pagcarrito/carrito.php"><i class="fa-solid fa-cart-shopping"></i>🛒</a>
+    <a href="../PagRegistro/login.php"><i class="fa-solid fa-user"></i>👤</a>
+    <a href="../PagRegistro/registro.php"><i class="fa-solid fa-user-plus"></i>📝</a>
+    
+</div>
+        <span></span>
+    </nav>
 
 </header>

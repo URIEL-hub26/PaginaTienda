@@ -1,33 +1,492 @@
-
-
-#descripcion {
-    text-align: center;
-    margin-top: 1%;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
+/*==================================
+            GENERAL
+==================================*/
+main{
+    flex:1;
+}
+*{
+    box-sizing:border-box;
 }
 
-#productos ul {
+html{
+    overflow-x:hidden;
+    height: 100%;
+}
+
+body{
+    min-height: 100vh;
     display: flex;
-    list-style: none;
-    padding: 0;
+    flex-direction:column;
+
+    margin:0;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:#f4f8f4;
+
+    color:#20242c;
+
 }
 
-#productos li {
-    padding: 0% 10%;
-    border-right: 1px solid gray;
+
+/*==================================
+        BANNER PRINCIPAL
+==================================*/
+
+#banner{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:40px;
+
+    padding:60px clamp(20px,6vw,80px);
+
+    min-height:500px;
+
+    background:#eef7ee;
+
 }
 
-#productos li:last-child {
-    border-right: none;
-}
-#pie ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
+
+#texto-banner{
+
+    flex:1;
+
+    min-width:0;
+
 }
 
-#pie li {
-    padding: 1% 1%;
-    border-right: 1px solid gray;
+
+#texto-banner h1{
+
+    font-size:clamp(32px,5vw,55px);
+
+    line-height:1.2;
+
+    margin:0;
+
+    color:#20242c;
+
+}
+
+
+#texto-banner span{
+
+    color:#168c3a;
+
+}
+
+
+#texto-banner p{
+
+    margin-top:25px;
+
+    margin-bottom:40px;
+
+    font-size:clamp(15px,2vw,22px);
+
+    line-height:1.7;
+
+    letter-spacing:1px;
+
+    color:#4c4c4c;
+
+}
+
+
+#texto-banner a{
+
+    display:inline-block;
+
+    padding:16px 40px;
+
+    background:#168c3a;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+#texto-banner a:hover{
+
+    background:#0f6f2c;
+
+    transform:translateY(-3px);
+
+}
+
+
+/*==================================
+            IMAGEN
+==================================*/
+
+#imagen-banner{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+#imagen-banner img{
+
+    width:100%;
+
+    max-width:650px;
+
+    height:auto;
+
+    object-fit:contain;
+
+}
+
+
+
+/*==================================
+        DESCRIPCIÓN
+==================================*/
+
+#descripcion{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:stretch;
+
+    background:#f7f7f7;
+
+    padding:45px clamp(20px,5vw,40px);
+
+    text-align:center;
+
+}
+
+
+#descripcion div{
+
+    flex:1;
+
+    padding:0 25px;
+
+    border-right:1px solid #ddd;
+
+}
+
+
+#descripcion div:last-child{
+
+    border-right:none;
+
+}
+
+
+#descripcion h2{
+
+    font-size:clamp(28px,4vw,42px);
+
+    margin:0;
+
+    color:#168c3a;
+
+}
+
+
+#descripcion h3{
+
+    margin:15px 0 10px;
+
+    font-size:clamp(18px,2vw,22px);
+
+}
+
+
+#descripcion p{
+
+    font-size:16px;
+
+    color:#5f5f5f;
+
+    line-height:1.6;
+
+}
+
+
+
+/*==================================
+        TESTIMONIOS
+==================================*/
+
+#testimonios{
+
+    width:100%;
+
+    background:#f8f9fa;
+
+    padding:50px clamp(20px,5vw,40px);
+
+    text-align:center;
+
+}
+
+
+#testimonios h2{
+
+    font-size:clamp(24px,4vw,30px);
+
+    color:#333;
+
+    margin-bottom:30px;
+
+}
+
+
+#testimonios .testimonio{
+
+    width:100%;
+
+    max-width:600px;
+
+    margin:auto;
+
+    padding:30px;
+
+    background:white;
+
+    border-radius:10px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+
+    transition:.3s;
+
+}
+
+
+#testimonios .testimonio:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+.testimonio-estrellas{
+
+    font-size:30px;
+
+    color:#f4c542;
+
+}
+
+
+.testimonio-texto{
+
+    font-size:clamp(16px,2vw,20px);
+
+    color:#555;
+
+    font-style:italic;
+
+    line-height:1.6;
+
+}
+
+
+.testimonio-nombre{
+
+    font-size:18px;
+
+    color:#333;
+
+}
+
+
+
+/*==================================
+            TABLETS
+==================================*/
+
+@media(max-width:992px){
+
+
+#banner{
+
+    gap:25px;
+
+}
+
+
+#descripcion{
+
+    flex-wrap:wrap;
+
+}
+
+
+#descripcion div{
+
+    min-width:250px;
+
+}
+
+
+}
+
+
+
+/*==================================
+            CELULARES
+==================================*/
+
+@media(max-width:768px){
+
+
+#banner{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    min-height:auto;
+
+    padding:40px 20px;
+
+}
+
+
+#imagen-banner{
+
+    order:1;
+
+    width:100%;
+
+}
+
+
+#texto-banner{
+
+    order:2;
+
+}
+
+
+#imagen-banner img{
+
+    max-width:350px;
+
+}
+
+
+#texto-banner a{
+
+    width:100%;
+
+    max-width:280px;
+
+}
+
+
+#descripcion{
+
+    flex-direction:column;
+
+}
+
+
+#descripcion div{
+
+    border-right:none;
+
+    border-bottom:1px solid #ddd;
+
+    padding:25px 10px;
+
+}
+
+
+#descripcion div:last-child{
+
+    border-bottom:none;
+
+}
+
+
+
+#testimonios .testimonio{
+
+    padding:20px;
+
+}
+
+
+}
+
+
+
+/*==================================
+        CELULARES PEQUEÑOS
+==================================*/
+
+@media(max-width:480px){
+
+
+#banner{
+
+    padding:30px 15px;
+
+}
+
+
+#texto-banner h1{
+
+    font-size:32px;
+
+}
+
+
+#texto-banner p{
+
+    font-size:15px;
+
+}
+
+
+#texto-banner a{
+
+    padding:14px 25px;
+
+    font-size:15px;
+
+}
+
+
+#testimonios{
+
+    padding:35px 15px;
+
+}
+
+
 }

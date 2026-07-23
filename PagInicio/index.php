@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NovaMart</title>
+<link rel="stylesheet" href="../estilos/estiloFooter.css">
+<link rel="stylesheet" href="../estilos/estiloHeader.css">   
+
+    <link rel="stylesheet" href="../estilos/estiloPagPrincipal.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+    <main>
+
+        <section id="banner">
+            <div id="texto-banner">
+                <h1>
+                    Tu tienda de <br> abarrotes <span>en línea</span>
+                </h1>
+                <p>Compra fácil, rápido y desde la <br> comodidad de tu hogar.</p>
+                <a href="../PagProductos/Productos.php">Ver productos</a>
+            </div>
+            <div id="imagen-banner">
+                <img src="imagenes/logo.jpeg" alt="Canasta de abarrotes">
+            </div>
+        </section>
+
+        <section id="descripcion">
+            <div>
+                <h2>🛍️</h2>
+                <h3>Productos de calidad</h3>
+                <p>Variedad de productos <br> para tu hogar.</p>
+            </div>
+            <div>
+                <h2>🚚</h2>
+                <h3>Envío a domicilio</h3>
+                <p>En compras de $200 <br>o más.</p>
+            </div>
+            <div>
+                <h2>✅</h2>
+                <h3>Pagas al recibir</h3>
+                <p>Paga en efectivo cuando <br>recibas tu pedido.</p>
+            </div>
+        </section>
+        <section id="testimonios">
+            <h2> Lo que dicen nuestros clientes</h2>
+            <div class="testimonio">
+                <p class="testimonio-estrellas">⭐⭐⭐⭐⭐</p>
+                <p class="testimonio-texto">"Excelente servicio, llegó a tiempo"</p>
+                <h4 class="testimonio-nombre">- María G.</h4>
+            </div>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+
+    <script src="prin.js"></script>
+
+
+
+    <script>
+        fetch('../PagHeader/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                setTimeout(configurarBusquedaInicio, 100);
+            });
+        function configurarBusquedaInicio() {
+            const inputBusqueda = document.getElementById('input-busqueda');
+
+            if (inputBusqueda) {
+                inputBusqueda.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        const texto = inputBusqueda.value.trim();
+                        if (texto !== "") {
+                            // Guardamos el término en la memoria del navegador
+                            localStorage.setItem('terminoBusqueda', texto);
+                            // Redirigimos a la sección de productos
+                            window.location.href = "../PagProductos/Productos.html";
+                        }
+                    }
+                });
+            }
+        }
+        fetch('../PagHeader/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error("Error en el fetch del footer:", error));
+
+    </script>
+
+</body>
+
+</html>

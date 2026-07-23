@@ -1,115 +1,381 @@
-/* Estructura general con Flexbox para poner la barra al lado de los productos */
+/*==================================
+        GENERAL
+==================================*/
+
 .contenedor-catalogo {
+
     display: flex;
+
     max-width: 1200px;
+
     margin: 20px auto;
-    gap: 20px;
-    font-family: sans-serif;
+
+    gap: 25px;
+
+    padding: 0 20px;
+
+    align-items: flex-start;
+
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 
-/* Diseño de la Barra Lateral */
+/*==================================
+        BARRA LATERAL
+==================================*/
+
 .barra-lateral {
-    width: 250px;
-    background-color: #f9f9f9;
+
+    width: 260px;
+
+    background: #f9f9f9;
+
     border: 1px solid #e0e0e0;
-    border-radius: 8px;
+
+    border-radius: 10px;
+
     padding: 20px;
+
+    position: sticky;
+
+    top: 20px;
+
+    flex-shrink: 0;
+
 }
 
 .barra-lateral h3 {
+
     margin-top: 0;
+
+    margin-bottom: 15px;
+
     color: #333;
+
 }
 
 .barra-lateral ul {
+
     list-style: none;
+
     padding: 0;
+
 }
 
-.barra-lateral ul li a {
+.barra-lateral li {
+
+    margin-bottom: 8px;
+
+}
+
+.barra-lateral a {
+
     display: block;
+
     padding: 10px;
-    color: #555;
+
+    border-radius: 6px;
+
     text-decoration: none;
-    border-radius: 4px;
+
+    color: #555;
+
+    transition: .3s;
+
 }
 
-.barra-lateral ul li a:hover, 
-.barra-lateral ul li a.active {
-    background-color: #e8f5e9;
-    color: #2e7d32;
+.barra-lateral a:hover,
+
+.barra-lateral a.active {
+
+    background: #E8F5E9;
+
+    color: #2E7D32;
+
     font-weight: bold;
+
 }
 
-/* Área de contenido principal */
+/*==================================
+        CONTENIDO
+==================================*/
+
 .seccion-productos {
-    flex: 1; /* Ocupa todo el espacio restante */
+
+    flex: 1;
+
+    min-width: 0;
+
 }
 
-/* Barra de búsqueda */
+/*==================================
+        BUSCADOR
+==================================*/
+
+.barra-busqueda {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin: 20px 0;
+
+}
+
 .barra-busqueda input {
-    width: 100%;
-    padding: 12px;
+
+    flex: 1;
+
+    padding: 12px 18px;
+
     border: 1px solid #ccc;
-    border-radius: 25px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
+
+    border-radius: 30px;
+
+    outline: none;
+
+    transition: .3s;
+
 }
 
-/* La magia del Grid para acomodar las tarjetas de forma automática */
+.barra-busqueda input:focus {
+
+    border-color: #2E7D32;
+
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, .15);
+
+}
+
+/*==================================
+        BOTÓN BUSCAR
+==================================*/
+
+.btn-buscar {
+
+    background: #2E7D32;
+
+    margin: bottom 10px;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 22px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: .3s;
+
+}
+
+.btn-buscar:hover {
+
+    background: #1B5E20;
+
+}
+
+/*==================================
+        GRID PRODUCTOS
+==================================*/
+
 .grid-productos {
+
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+
 }
 
-/* Diseño de cada tarjeta de producto (Card) */
+/*==================================
+        TARJETAS
+==================================*/
+
 .tarjeta-producto {
-    background-color: #fff;
+
+    background: white;
+
     border: 1px solid #ededed;
-    border-radius: 12px;
-    padding: 15px;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    transition: transform 0.2s;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+
+    transition: .3s;
+
 }
 
 .tarjeta-producto:hover {
-    transform: translateY(-5px);
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 12px 25px rgba(0, 0, 0, .12);
+
 }
 
 .tarjeta-producto img {
-    max-width: 100%;
-    height: 120px;
+
+    width: 100%;
+
+    max-width: 170px;
+
+    height: 150px;
+
     object-fit: contain;
+
     margin-bottom: 15px;
+
 }
 
 .tarjeta-producto h4 {
-    margin: 10px 0 5px 0;
-    font-size: 16px;
+
     color: #333;
+
+    margin: 10px 0;
+
+    font-size: 17px;
+
 }
 
-.tarjeta-producto .precio {
+.precio {
+
+    color: #2E7D32;
+
+    font-size: 22px;
+
     font-weight: bold;
-    color: #2e7d32;
-    font-size: 18px;
-    margin: 5px 0 15px 0;
+
+    margin-bottom: 18px;
+
 }
 
-/* El botón verde estilo "Abarrotes" */
 .btn-agregar {
-    background-color: #2e7d32;
-    color: rgba(255, 255, 255, 0.74);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
+
     width: 100%;
+
+    border: none;
+
+    background: #2E7D32;
+
+    color: white;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
     font-weight: bold;
+
+    transition: .3s;
+
 }
 
 .btn-agregar:hover {
-    background-color: #1b5e20;
+
+    background: #1B5E20;
+
+}
+
+/*==================================
+        TABLETS
+==================================*/
+
+@media(max-width:992px) {
+
+    .contenedor-catalogo {
+
+        gap: 20px;
+
+    }
+
+    .barra-lateral {
+
+        width: 220px;
+
+    }
+
+    .grid-productos {
+
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+
+    }
+
+}
+
+/*==================================
+        CELULARES
+==================================*/
+
+@media(max-width:768px) {
+
+    .contenedor-catalogo {
+
+        flex-direction: column;
+
+    }
+
+    .barra-lateral {
+
+        position: relative;
+
+        width: 100%;
+
+        top: 0;
+
+    }
+
+    .barra-busqueda {
+
+        flex-direction: column;
+
+    }
+
+    .btn-buscar {
+
+        width: 100%;
+
+    }
+
+    .grid-productos {
+
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+
+    }
+
+}
+
+/*==================================
+        CELULARES PEQUEÑOS
+==================================*/
+
+@media(max-width:480px) {
+
+    .grid-productos {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .tarjeta-producto img {
+
+        max-width: 140px;
+
+    }
+
+    .tarjeta-producto {
+
+        padding: 18px;
+
+    }
+
 }
