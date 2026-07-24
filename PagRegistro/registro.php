@@ -22,45 +22,60 @@
 
 </div>
 
-<form>
+<form action="guardar.php" method="POST">
 
-<div class="row">
+    <div class="row">
 
-<div class="input">
-<i class="fa-solid fa-user"></i>
-<input type="text" placeholder="Nombre">
-</div>
+        <div class="input">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" placeholder="Nombre" id="nombre" name="nombre" required>
+        </div>
 
-<div class="input">
-<i class="fa-solid fa-user"></i>
-<input type="text" placeholder="Apellido">
-</div>
+        <div class="input">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" placeholder="Apellido paterno" id="apellido_paterno" name="apellido_paterno" required>
+        </div>
 
-</div>
+    </div>
 
-<div class="input">
-<i class="fa-solid fa-envelope"></i>
-<input type="email" placeholder="Correo electrónico">
-</div>
+    <div class="input">
+        <i class="fa-solid fa-user"></i>
+        <input type="text" placeholder="Apellido materno" id="apellido_materno" name="apellido_materno">
+    </div>
 
-<div class="input">
-<i class="fa-solid fa-lock"></i>
-<input type="password" placeholder="Contraseña">
-</div>
+    <div class="input">
+        <i class="fa-solid fa-user"></i>
+        <input type="text" placeholder="Nombre de usuario" id="usuario" name="usuario" required>
+    </div>
 
-<div class="terms">
+    <div class="input">
+        <i class="fa-solid fa-envelope"></i>
+        <input type="email" placeholder="Correo electrónico" id="correo" name="correo" required>
+    </div>
 
-<input type="checkbox">
+    <div class="input">
+        <i class="fa-solid fa-phone"></i>
+        <input type="tel" placeholder="Teléfono" id="telefono" name="telefono">
+    </div>
 
-<label>
-Acepto los <a href="#">Términos y condiciones</a>
-</label>
+    <div class="input">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" placeholder="Contraseña" id="password" name="password" required>
+    </div>
 
-</div>
+    <div class="terms">
 
-<button class="btn">
-Crear cuenta
-</button>
+        <input type="checkbox" id="terminos" required>
+
+        <label for="terminos">
+            Acepto los <a href="#">Términos y condiciones</a>
+        </label>
+
+    </div>
+
+    <button type="submit" class="btn">
+        Crear cuenta
+    </button>
 
 </form>
 
