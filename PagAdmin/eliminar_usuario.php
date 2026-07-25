@@ -8,18 +8,12 @@ $id = $_GET["id"];
 $sql = "DELETE FROM usuarios WHERE id_usuario=?";
 
 $stmt = $conexion->prepare($sql);
+$stmt->bind_param("i", $id);
 
-$stmt->bind_param("i",$id);
-
-
-if($stmt->execute()){
-
+if ($stmt->execute()) {
     header("Location: usuarios.php");
-
-}else{
-
+} else {
     echo "Error al eliminar";
-
 }
 
 ?>

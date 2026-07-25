@@ -1,6 +1,5 @@
 <?php
 require_once("conexion.php");
-
 session_start();
 
 $email = $_POST["email"];
@@ -15,7 +14,6 @@ $resultado = $stmt->get_result();
 if ($resultado->num_rows > 0) {
     $fila = $resultado->fetch_assoc();
     if (password_verify($password, $fila["password"])){
-        // Crear variables de sesion
 $_SESSION["id_usuario"] = $fila["id_usuario"];
 $_SESSION["usuario"] = $fila["usuario"];
 $_SESSION["id_rol"] = $fila["id_rol"];
