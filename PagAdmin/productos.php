@@ -18,7 +18,7 @@ $sql = "SELECT
 
 
 $resultado = $conexion->query($sql);
-
+echo "Productos encontrados: " . $resultado->num_rows;
 
 ?>
 

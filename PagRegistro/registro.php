@@ -24,19 +24,16 @@
 
 <form action="guardar.php" method="POST">
 
-    <div class="row">
 
         <div class="input">
             <i class="fa-solid fa-user"></i>
             <input type="text" placeholder="Nombre" id="nombre" name="nombre" required>
         </div>
-
         <div class="input">
             <i class="fa-solid fa-user"></i>
             <input type="text" placeholder="Apellido paterno" id="apellido_paterno" name="apellido_paterno" required>
         </div>
 
-    </div>
 
     <div class="input">
         <i class="fa-solid fa-user"></i>

@@ -3,11 +3,6 @@ session_start();
 
 require_once("../PagRegistro/conexion.php");
 
-if (!isset($_SESSION["id_usuario"])) {
-    header("Location: ../PagLogin/login.php");
-    exit();
-}
-
 if ($_SESSION["id_rol"] != 1) {
     header("Location: ../PagInicio/index.php");
     exit();
@@ -112,8 +107,15 @@ style="border:none;">
         </div>
 
         <div>
-            <label>Imagen:</label>
-            <input type="text" name="imagen">
+            <form action="guardar_producto.php" method="POST" enctype="multipart/form-data">
+                <div>
+    <label>Imagen:</label>
+    <input
+        type="file"
+        name="imagen"
+        accept="image/png,image/jpeg,image/webp"
+        required>
+    </div>
         </div>
 
         <div>
