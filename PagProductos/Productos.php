@@ -48,7 +48,8 @@
                 <img src="../PagInicio/imagenes/<?php echo htmlspecialchars($producto['imagen']); ?>" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
                 <h4><?php echo htmlspecialchars($producto['nombre']); ?></h4>
                 <p class="precio">$<?php echo number_format($producto['precio'], 2); ?></p>
-                <button class="btn-agregar">Agregar🛒</button>
+                <button class="btn-agregar" data-id="<?php echo $producto
+                ['id_producto']; ?>"> Agregar🛒 </button>
             </div>
         <?php endforeach; ?>
     </div>
