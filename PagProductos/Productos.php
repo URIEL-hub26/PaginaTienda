@@ -159,7 +159,7 @@
     }
 </script>
 
-</body>
+
 
 
 
@@ -174,16 +174,32 @@
         }
         )
 </script>
+
 <script>
-    fetch('../PagHeader/footer.html')
+document.querySelectorAll(".btn-agregar").forEach(boton => {
+    boton.addEventListener("click", () => {
+        // Apuntar al nombre de archivo correcto (agregarCarrito.php)
+        fetch("agregarCarrito.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: "id_producto=" + boton.dataset.id
+        })
         .then(response => response.text())
-        .then(data => {
-            document.getElementById
-                ('footer-placeholder').innerHTML = data;
-        }
-        )
+        .then(respuesta => {
+            if (respuesta.trim() === "ok") {
+                alert("Producto agregado al carrito 🛒");
+            } else {
+                alert("Ocurrió un error");
+                console.log("Respuesta del servidor:", respuesta);
+            }
+        })
+        .catch(error => console.error("Error en el fetch:", error));
+    });
+});
 </script>
 
-
+</body>
 
 </html>

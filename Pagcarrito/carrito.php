@@ -15,47 +15,59 @@
 
         <h1>Mi carrito</h1>
 
-        <table>
-            <tr>
-                <th>Producto</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Subtotal</th>
-            </tr>
+       <table>
 
-            <tr>
-                <td>Aceite 1L</td>
-                <td>$32.00</td>
-                <td>
-                    <button>-</button>
-                    <span>1</span>
-                    <button>+</button>
-                </td>
-                <td>$32.00</td>
-            </tr>
+<tr>
+<th>Producto</th>
+<th>Precio</th>
+<th>Cantidad</th>
+<th>Subtotal</th>
+</tr>
 
-            <tr>
-                <td>Arroz 1kg</td>
-                <td>$28.00</td>
-                <td>
-                    <button>-</button>
-                    <span>2</span>
-                    <button>+</button>
-                </td>
-                <td>$56.00</td>
-            </tr>
+<?php
 
-            <tr>
-                <td>Leche 1L</td>
-                <td>$22.00</td>
-                <td>
-                    <button>-</button>
-                    <span>1</span>
-                    <button>+</button>
-                </td>
-                <td>$22.00</td>
-            </tr>
-        </table>
+include "../PagProductos/conexionProducto.php";
+
+$id_usuario = 1;
+
+$sql="SELECT productos.nombre,
+productos.precio,
+carrito.cantidad
+FROM carrito
+INNER JOIN productos
+ON carrito.id_producto=productos.id_producto
+WHERE carrito.id_usuario=$id_usuario";
+
+$resultado=mysqli_query($conexion,$sql);
+$total=0;
+
+while($fila=mysqli_fetch_assoc($resultado)){
+
+$subtotal=$fila['precio']*$fila['cantidad'];
+
+$total+=$subtotal;
+
+echo "
+
+<tr>
+
+<td>{$fila['nombre']}</td>
+
+<td>$".$fila['precio']."</td>
+
+<td>{$fila['cantidad']}</td>
+
+<td>$".$subtotal."</td>
+
+</tr>
+
+";
+
+}
+
+?>
+
+</table>
 
         <div class="zona-inferior">
             <div class="cupon">
@@ -65,9 +77,12 @@
             </div>
 
             <div class="resumen">
-                <p>Subtotal: <strong>$110.00</strong></p>
-                <p>Envío: <strong>$0.00</strong></p>
-                <h2>Total: <span>$110.00</span></h2>
+                <p>Subtotal: <strong>$<?php echo number_format($total,2); ?></strong></p>
+                 <p>Envío: <strong>$0.00</strong></p>
+                 <h2>Total:
+                 <span>$<?php echo number_format($total,2); ?></span>
+                  </h2>
+        
             </div>
         </div>
 
