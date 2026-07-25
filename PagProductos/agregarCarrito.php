@@ -6,7 +6,6 @@ include 'conexionProducto.php';
 
 $id_usuario = 1;
 
-// Verificar que llegó el ID
 if (!isset($_POST['id_producto'])) {
     die("No llegó el id_producto");
 }
