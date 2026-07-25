@@ -391,3 +391,68 @@ input{
 }
 
 }
+.btn-editar,
+.btn-rol,
+.btn-eliminar{
+
+    border:none;
+    padding:8px 12px;
+    border-radius:5px;
+    cursor:pointer;
+    color:white;
+    margin:3px;
+
+}
+
+
+.btn-editar{
+    background:#1976D2;
+}
+
+
+.btn-rol{
+    background:#F9A825;
+}
+
+
+.btn-eliminar{
+    background:#D32F2F;
+}
+
+
+button:hover{
+    opacity:.8;
+}
+.btn-editar,
+.btn-rol,
+.btn-eliminar{
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+    color:white;
+    margin:2px;
+    font-size:14px;
+}
+
+
+.btn-editar{
+    background:#1976D2;
+}
+
+
+.btn-rol{
+    background:#F9A825;
+}
+
+
+.btn-eliminar{
+    background:#D32F2F;
+}
+
+
+.btn-editar:hover,
+.btn-rol:hover,
+.btn-eliminar:hover{
+    opacity:0.8;
+}

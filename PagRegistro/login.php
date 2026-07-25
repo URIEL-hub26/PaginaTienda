@@ -25,7 +25,7 @@
 
         </div>
 
-        <form>
+        <form action="validar.php" method="POST">
 
             <div class="input">
 
@@ -34,7 +34,7 @@
                 <input
                 type="email"
                 placeholder="Correo electrónico"
-                required>
+                id="email" name="email" required>
 
             </div>
 
@@ -45,7 +45,7 @@
                 <input
                 type="password"
                 placeholder="Contraseña"
-                required>
+                id="password" name="password" required>
 
             </div>
 

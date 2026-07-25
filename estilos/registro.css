@@ -135,20 +135,6 @@ form{
 }
 
 /* ==========================
-   DOS COLUMNAS
-========================== */
-
-.row{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:15px;
-
-}
-
-/* ==========================
    INPUTS
 ========================== */
 
@@ -313,12 +299,6 @@ form{
 .card{
 
     padding:25px;
-
-}
-
-.row{
-
-    grid-template-columns:1fr;
 
 }
 
