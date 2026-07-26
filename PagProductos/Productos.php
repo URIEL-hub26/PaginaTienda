@@ -9,6 +9,43 @@
     <link rel="stylesheet" href="../estilos/estiloProductos.css">
 </head>
 
+<style>
+        .tarjeta-producto {
+            position: relative !important;
+            overflow: hidden !important;
+        }
+
+        .descripcion-hover {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: rgba(0, 0, 0, 0.88) !important;
+            color: #ffffff !important;
+            font-size: 0.85rem !important;
+            line-height: 1.4 !important;
+            padding: 18px !important;
+            box-sizing: border-box !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important;
+            overflow-y: auto !important;
+            opacity: 0 !important;
+            transition: opacity 0.3s ease-in-out !important;
+            z-index: 10 !important;
+        }
+
+        .descripcion-hover::-webkit-scrollbar {
+            display: none !important;
+        }
+
+        .tarjeta-producto:hover .descripcion-hover {
+            opacity: 1 !important;
+        }
+    </style>
+
 <body>
     <div id="header-placeholder"></div>
     <div class="contenedor-catalogo">
@@ -45,7 +82,10 @@
         foreach ($productos as $producto): 
         ?>
             <div class="tarjeta-producto" data-categoria="<?php echo strtr(mb_strtolower($producto['categoria_nombre']), 'áéíóú', 'aeiou'); ?>">
-                <img src="../PagInicio/imagenes/<?php echo htmlspecialchars($producto['imagen']); ?>" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
+            <div class="descripcion-hover">
+           <p><?php echo htmlspecialchars($producto['descripcion'] ?? 'Sin descripción disponible.'); ?></p>
+            </div>    
+            <img src="../PagInicio/imagenes/<?php echo htmlspecialchars($producto['imagen']); ?>" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
                 <h4><?php echo htmlspecialchars($producto['nombre']); ?></h4>
                 <p class="precio">$<?php echo number_format($producto['precio'], 2); ?></p>
                 <button class="btn-agregar" data-id="<?php echo $producto

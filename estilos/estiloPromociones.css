@@ -269,6 +269,32 @@ main{
 
 }
 
+.descripcion-hover {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.88) !important;
+    color: #ffffff !important;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow-y: auto;
+    opacity: 0 !important; /* Mantiene la descripción oculta inicialmente */
+    transition: opacity 0.3s ease-in-out;
+    z-index: 10;
+}
+
+.tarjeta-producto:hover .descripcion-hover {
+    opacity: 1 !important; /* La muestra sólo al pasar el mouse */
+}
+
 /*=========================
     DESCUENTO
 =========================*/
