@@ -22,4 +22,6 @@
     min-width: 250px; 
     flex-shrink: 0; /* 🔥 OBLIGATORIO: Le prohíbe a la tarjeta encogerse o deformarse */
     box-sizing: border-box;
+
+    
 }
