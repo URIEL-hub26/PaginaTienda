@@ -1,9 +1,17 @@
 <?php
+session_start();
+
+// Validar si el usuario inició sesión. Si no, lo manda a la pantalla de Login.
+if (!isset($_SESSION['id_usuario'])) {
+    header("Location: ../PagRegistro/login.php"); // Asegúrate de que esta sea la ruta correcta a tu login
+    exit();
+}
+
+$id_usuario = $_SESSION['id_usuario']; // ID dinámico tomado de la sesión
+
 include '../PagProductos/conexionProducto.php';
 
-$id_usuario = 1; // ID del usuario
-
-// --- 1. CÁLCULO DEL TOTAL Y RESUMEN DESDE LA BASE DE DATOS ---
+//1. CÁLCULO DEL TOTAL Y RESUMEN DESDE LA BASE DE DATOS 
 $sql_monto = "SELECT SUM(c.cantidad * p.precio) AS subtotal 
               FROM carrito c 
               INNER JOIN productos p ON c.id_producto = p.id_producto 
@@ -17,7 +25,7 @@ $subtotal = $res_monto['subtotal'] ?? 0;
 $costo_envio = ($subtotal >= 200 || $subtotal == 0) ? 0 : 50;
 $total_final = $subtotal + $costo_envio;
 
-// --- 2. PROCESAMIENTO DEL PEDIDO ---
+// 2. PROCESAMIENTO DEL PEDIDO 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ob_clean();
 

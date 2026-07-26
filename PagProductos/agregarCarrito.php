@@ -2,9 +2,17 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+session_start();
+
+// 2. Verificar que haya un usuario autenticado
+if (!isset($_SESSION['id_usuario'])) {
+    die("Debes iniciar sesión para agregar productos");
+}
+
 include 'conexionProducto.php';
 
-$id_usuario = 1;
+// 3. Obtener el ID real del usuario de la sesión
+$id_usuario = $_SESSION['id_usuario'];
 
 if (!isset($_POST['id_producto'])) {
     die("No llegó el id_producto");

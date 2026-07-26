@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['id_usuario'])) {
+    header("Location: ../PagRegistro/login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,7 +36,7 @@
 
 include "../PagProductos/conexionProducto.php";
 
-$id_usuario = 1;
+$id_usuario = $_SESSION['id_usuario'];
 
 $sql="SELECT productos.nombre,
 productos.precio,
