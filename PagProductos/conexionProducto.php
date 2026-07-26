@@ -1,9 +1,8 @@
 <?php
 $host = "127.0.0.1";
 $user = "root";
-$password = ""; // Tu contraseña de MySQL de XAMPP (por defecto está vacía)
-$database = "novamart"; // Asegúrate de escribir exactamente el nombre de tu BD
-
+$password = ""; 
+$database = "novamart"; 
 $conexion = mysqli_connect($host, $user, $password, $database);
 
 if (!$conexion) {

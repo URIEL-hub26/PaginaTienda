@@ -1,17 +1,16 @@
 <?php
 session_start();
 
-// Validar si el usuario inició sesión. Si no, lo manda a la pantalla de Login.
+// Validar si el usuario inició sesión
 if (!isset($_SESSION['id_usuario'])) {
-    header("Location: ../PagRegistro/login.php"); // Asegúrate de que esta sea la ruta correcta a tu login
+    header("Location: ../PagRegistro/login.php");
     exit();
 }
 
-$id_usuario = $_SESSION['id_usuario']; // ID dinámico tomado de la sesión
-
+$id_usuario = $_SESSION['id_usuario'];
 include '../PagProductos/conexionProducto.php';
 
-//1. CÁLCULO DEL TOTAL Y RESUMEN DESDE LA BASE DE DATOS 
+// 1. CÁLCULO DEL TOTAL Y RESUMEN DESDE LA BASE DE DATOS 
 $sql_monto = "SELECT SUM(c.cantidad * p.precio) AS subtotal 
               FROM carrito c 
               INNER JOIN productos p ON c.id_producto = p.id_producto 
@@ -25,7 +24,7 @@ $subtotal = $res_monto['subtotal'] ?? 0;
 $costo_envio = ($subtotal >= 200 || $subtotal == 0) ? 0 : 50;
 $total_final = $subtotal + $costo_envio;
 
-// 2. PROCESAMIENTO DEL PEDIDO 
+// 2. PROCESAMIENTO DEL PEDIDO VÍA POST (FETCH)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ob_clean();
 
@@ -40,11 +39,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $resultado = $stmt->get_result();
 
     $items = [];
-    $total_calculado = 0;
+    $subtotal_calculado = 0;
 
     while ($row = $resultado->fetch_assoc()) {
         $items[] = $row;
-        $total_calculado += $row['precio'] * $row['cantidad'];
+        $subtotal_calculado += $row['precio'] * $row['cantidad'];
     }
 
     if (empty($items)) {
@@ -52,10 +51,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    // Insertar en la tabla pedidos (Adaptado a tus columnas exactas: id_usuario, fecha, total, estado)
-    $fecha = date("Y-m-d H:i:s");
-    $estado = "pendiente";
+    // Calcular costo de envío y total final
+    $envio_calculado = ($subtotal_calculado >= 200) ? 0 : 50;
+    $total_con_envio = $subtotal_calculado + $envio_calculado;
 
+    $fecha = date("Y-m-d H:i:s");
+    $estado = "Pendiente";
+
+    // Insertar en la tabla pedidos
     $sql_pedido = "INSERT INTO pedidos (id_usuario, fecha, total, estado) VALUES (?, ?, ?, ?)";
     $stmt_pedido = $conexion->prepare($sql_pedido);
 
@@ -64,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    $stmt_pedido->bind_param("isds", $id_usuario, $fecha, $total_calculado, $estado);
+    $stmt_pedido->bind_param("isds", $id_usuario, $fecha, $total_con_envio, $estado);
 
     if ($stmt_pedido->execute()) {
         $id_pedido = $conexion->insert_id;
@@ -79,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt_det->execute();
         }
 
-        // Vaciar el carrito
+        // Vaciar el carrito de la base de datos
         $sql_limpiar = "DELETE FROM carrito WHERE id_usuario = ?";
         $stmt_limpiar = $conexion->prepare($sql_limpiar);
         $stmt_limpiar->bind_param("i", $id_usuario);
@@ -92,7 +95,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit();
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -204,7 +206,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         document.getElementById("btn-realizar").addEventListener("click", function (e) {
             e.preventDefault();
 
-            // 1. Obtener y validar los campos del formulario
             const nombre = document.getElementById("input-nombre").value.trim();
             const direccion = document.getElementById("input-direccion").value.trim();
             const telefono = document.getElementById("input-telefono").value.trim();
@@ -215,7 +216,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 return;
             }
 
-            // 2. Enviar petición por fetch
             const datos = "entrega=" + encodeURIComponent(opcionSeleccionada) +
                           "&nombre=" + encodeURIComponent(nombre) +
                           "&direccion=" + encodeURIComponent(direccion) +
@@ -231,6 +231,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             .then(response => response.text())
             .then(respuesta => {
                 if (respuesta.trim() === "ok") {
+                    localStorage.removeItem('carrito'); // Limpiar carrito local
                     alert("¡Pedido realizado con éxito! 🛍️");
                     window.location.href = "../PagInicio/index.php";
                 } else if (respuesta.trim() === "carrito_vacio") {

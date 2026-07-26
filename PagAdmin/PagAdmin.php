@@ -170,6 +170,13 @@ while($categoria = $categorias->fetch_assoc()){
 </section>
         <section id="pedidos">
             <h1>Pedidos</h1>
+            
+            <iframe 
+                src="pedidos.php"
+                width="100%"
+                height="500px"
+                style="border:none;">
+            </iframe>
         </section>
         <section id="reportes">
             <h1>Reportes</h1><canvas id="grafica"></canvas>
