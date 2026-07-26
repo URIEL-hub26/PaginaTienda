@@ -10,42 +10,45 @@
 </head>
 
 <style>
-        .tarjeta-producto {
-            position: relative !important;
-            overflow: hidden !important;
-        }
+    .tarjeta-producto {
+        position: relative !important;
+        overflow: hidden !important;
+    }
 
-        .descripcion-hover {
-            position: absolute !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100% !important;
-            height: 100% !important;
-            background: rgba(0, 0, 0, 0.88) !important;
-            color: #ffffff !important;
-            font-size: 0.85rem !important;
-            line-height: 1.4 !important;
-            padding: 18px !important;
-            box-sizing: border-box !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            text-align: center !important;
-            overflow-y: auto !important;
-            opacity: 0 !important;
-            transition: opacity 0.3s ease-in-out !important;
-            z-index: 10 !important;
-        }
+    .descripcion-hover {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        
+        /* 📉 REDUCCIÓN DE ALTURA: Ocupa solo el 65% de la tarjeta para no tapar el botón */
+        height: 65% !important; 
+        
+        background: rgba(0, 0, 0, 0.90) !important;
+        color: #ffffff !important;
+        font-size: 0.8rem !important;
+        line-height: 1.3 !important;
+        padding: 12px !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        overflow-y: auto !important;
+        opacity: 0 !important;
+        transition: opacity 0.3s ease-in-out !important;
+        z-index: 10 !important;
+        border-radius: 12px 12px 0 0 !important; /* Mantiene la curvatura superior */
+    }
 
-        .descripcion-hover::-webkit-scrollbar {
-            display: none !important;
-        }
+    .descripcion-hover::-webkit-scrollbar {
+        display: none !important;
+    }
 
-        .tarjeta-producto:hover .descripcion-hover {
-            opacity: 1 !important;
-        }
-    </style>
-
+    .tarjeta-producto:hover .descripcion-hover {
+        opacity: 1 !important;
+    }
+</style>
 <body>
     <div id="header-placeholder"></div>
     <div class="contenedor-catalogo">
