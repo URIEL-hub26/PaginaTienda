@@ -77,7 +77,7 @@
                             // Guardamos el término en la memoria del navegador
                             localStorage.setItem('terminoBusqueda', texto);
                             // Redirigimos a la sección de productos
-                            window.location.href = "../PagProductos/Productos.html";
+                            window.location.href = "../PagProductos/Productos.php";
                         }
                     }
                 });
