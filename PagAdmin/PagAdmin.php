@@ -47,7 +47,7 @@ $categorias = $conexion->query($sqlCategorias);
                     <h3>Productos</h3>
                     <h2>250</h2>
                 </div>
-                
+
                 <div class="card">
                     <h3>Ventas</h3>
                     <h2>75</h2>
@@ -64,110 +64,75 @@ $categorias = $conexion->query($sqlCategorias);
         </section>
         <section id="productos">
 
-<h1>Productos</h1>
+            <h1>Productos</h1>
 
-<button onclick="show('agregarProducto')">
-➕ Agregar producto
-</button>
-
-
-<iframe 
-src="productos.php"
-width="100%"
-height="500px"
-style="border:none;">
-</iframe>
+            <button onclick="show('agregarProducto')">
+                ➕ Agregar producto
+            </button>
 
 
-</section>
+            <iframe src="productos.php" width="100%" height="500px" style="border:none;">
+            </iframe>
+
+
+        </section>
         <section id="agregarProducto">
 
-    <h1>Agregar producto</h1>
+            <h1>Agregar producto</h1>
 
-    <form action="guardar_producto.php" method="POST">
-
-        <div>
-            <label>Nombre:</label>
-            <input type="text" name="nombre" required>
-        </div>
-
-        <div>
-            <label>Descripción:</label>
-            <textarea name="descripcion"></textarea>
-        </div>
-
-        <div>
-            <label>Precio:</label>
-            <input type="number" step="0.01" name="precio" required>
-        </div>
-
-        <div>
-            <label>Stock:</label>
-            <input type="number" name="stock" required>
-        </div>
-
-        <div>
             <form action="guardar_producto.php" method="POST" enctype="multipart/form-data">
-                <div>
-    <label>Imagen:</label>
-    <input
-        type="file"
-        name="imagen"
-        accept="image/png,image/jpeg,image/webp"
-        required>
-    </div>
-        </div>
 
-        <div>
+                <div class="campo">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
 
-<label>Categoría:</label>
+                <div class="campo">
+                    <label for="precio">Precio:</label>
+                    <input type="number" id="precio" name="precio" step="0.01" required>
+                </div>
 
-<select name="id_categoria" required>
+                <div class="campo">
+                    <label for="stock">Stock:</label>
+                    <input type="number" id="stock" name="stock" required>
+                </div>
 
+                <div class="campo">
+                    <label for="imagen">Imagen:</label>
+                    <input type="file" id="imagen" name="imagen" accept="image/png,image/jpeg,image/webp" required>
+                </div>
 
-<?php
+                <div class="campo">
+                    <label for="id_categoria">Categoría:</label>
 
-while($categoria = $categorias->fetch_assoc()){
+                    <select id="id_categoria" name="id_categoria" required>
 
-?>
+                        <?php while ($categoria = $categorias->fetch_assoc()) { ?>
 
-<option value="<?= $categoria['id_categoria'] ?>">
+                            <option value="<?= $categoria['id_categoria'] ?>">
+                                <?= $categoria['nombre'] ?>
+                            </option>
 
-<?= $categoria['nombre'] ?>
+                        <?php } ?>
 
-</option>
+                    </select>
+                </div>
 
+                <button type="submit">
+                    Guardar producto
+                </button>
 
-<?php
+            </form>
 
-}
-
-?>
-
-</select>
-
-</div>
-
-
-        <button type="submit">
-            Guardar producto
-        </button>
-
-    </form>
-
-</section>
+        </section>
         <section id="usuarios">
 
-    <h1>Usuarios registrados</h1>
+            <h1>Usuarios registrados</h1>
 
-    <iframe 
-        src="usuarios.php"
-        width="100%"
-        height="500px"
-        style="border:none;">
-    </iframe>
+            <iframe src="usuarios.php" width="100%" height="500px" style="border:none;">
+            </iframe>
 
-</section>
+        </section>
         <section id="pedidos">
             <h1>Pedidos</h1>
             

@@ -1,11 +1,7 @@
 <?php
 
 require_once("../PagRegistro/conexion.php");
-
 $id = $_GET["id"];
-
-
-// Obtener datos del usuario
 $sql = "SELECT * FROM usuarios WHERE id_usuario = ?";
 
 $stmt = $conexion->prepare($sql);
@@ -29,137 +25,118 @@ $resultadoRoles = $conexion->query($sqlRoles);
 <html>
 
 <head>
-<title>Editar Usuario</title>
+    <title>Editar Usuario</title>
 </head>
 
 
 <body>
 
 
-<h2>Editar Usuario</h2>
+    <h2>Editar Usuario</h2>
 
 
-<form action="actualizar_usuario.php" method="POST">
+    <form action="actualizar_usuario.php" method="POST">
 
 
-<input type="hidden" 
-name="id_usuario"
-value="<?= $usuario['id_usuario'] ?>">
+        <input type="hidden" name="id_usuario" value="<?= $usuario['id_usuario'] ?>">
 
 
 
-<label>Nombre:</label>
+        <label>Nombre:</label>
 
-<input type="text" 
-name="nombre"
-value="<?= $usuario['nombre'] ?>">
+        <input type="text" name="nombre" value="<?= $usuario['nombre'] ?>">
 
 
-<br>
+        <br>
 
 
-<label>Apellido paterno:</label>
+        <label>Apellido paterno:</label>
 
-<input type="text" 
-name="apellido_paterno"
-value="<?= $usuario['apellido_paterno'] ?>">
+        <input type="text" name="apellido_paterno" value="<?= $usuario['apellido_paterno'] ?>">
 
 
-<br>
+        <br>
 
 
-<label>Apellido materno:</label>
+        <label>Apellido materno:</label>
 
-<input type="text" 
-name="apellido_materno"
-value="<?= $usuario['apellido_materno'] ?>">
+        <input type="text" name="apellido_materno" value="<?= $usuario['apellido_materno'] ?>">
 
 
-<br>
+        <br>
 
 
-<label>Correo:</label>
+        <label>Correo:</label>
 
-<input type="email" 
-name="correo"
-value="<?= $usuario['correo'] ?>">
+        <input type="email" name="correo" value="<?= $usuario['correo'] ?>">
 
 
-<br>
+        <br>
 
 
-<label>Usuario:</label>
+        <label>Usuario:</label>
 
-<input type="text" 
-name="usuario"
-value="<?= $usuario['usuario'] ?>">
+        <input type="text" name="usuario" value="<?= $usuario['usuario'] ?>">
 
 
-<br>
+        <br>
 
 
-<label>Teléfono:</label>
+        <label>Teléfono:</label>
 
-<input type="text" 
-name="telefono"
-value="<?= $usuario['telefono'] ?>">
+        <input type="text" name="telefono" value="<?= $usuario['telefono'] ?>">
 
 
-<br><br>
+        <br><br>
 
 
-<label>Rol:</label>
+        <label>Rol:</label>
 
 
-<select name="id_rol">
+        <select name="id_rol">
 
 
-<?php
+            <?php
 
-while($rol = $resultadoRoles->fetch_assoc()){
+            while ($rol = $resultadoRoles->fetch_assoc()) {
 
 
-?>
+                ?>
 
-<option 
-value="<?= $rol['id_rol'] ?>"
+                <option value="<?= $rol['id_rol'] ?>" <?php
 
-<?php
+                  if ($rol['id_rol'] == $usuario['id_rol']) {
 
-if($rol['id_rol'] == $usuario['id_rol']){
+                      echo "selected";
 
-    echo "selected";
+                  }
 
-}
+                  ?>>
 
-?>
+                    <?= $rol['nombre'] ?>
 
->
+                </option>
 
-<?= $rol['nombre'] ?>
 
-</option>
+                <?php
 
+            }
 
-<?php
+            ?>
 
-}
 
-?>
+        </select>
 
 
-</select>
+        <br><br>
 
 
-<br><br>
+        <button type="submit">
+            Guardar cambios
+        </button>
 
 
-<button type="submit">
-Guardar cambios
-</button>
-
-
-</form>
+    </form>
 
 
 </body>

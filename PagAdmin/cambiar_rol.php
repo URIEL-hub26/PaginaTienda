@@ -10,8 +10,8 @@ WHEN 1 THEN 3
 END
 WHERE id_usuario=?";
 
-$stmt=$conexion->prepare($sql);
-$stmt->bind_param("i",$id);
+$stmt = $conexion->prepare($sql);
+$stmt->bind_param("i", $id);
 $stmt->execute();
 
 header("Location: usuarios.php");
