@@ -24,7 +24,42 @@ echo "Productos encontrados: " . $resultado->num_rows;
 
 
 <table width="100%" border="1">
-
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #fff;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #2e7d32;
+            color: white;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            background-color: #fff3cd;
+            color: #856404;
+        }
+    </style>
 <thead>
 
 <tr>
