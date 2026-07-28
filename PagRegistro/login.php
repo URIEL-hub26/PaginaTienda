@@ -95,15 +95,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 </div>
 </main>
-    <div id="footer-placeholder"></div>
+<?php include '../PagHeader/footer.php'; ?>
 
 
 </body>
-
-<script>
-fetch('../PagHeader/footer.html')
-.then(response => response.text())
-.then(data => {
-    document.getElementById('footer-placeholder').innerHTML = data;
-});
-</script>

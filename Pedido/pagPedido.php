@@ -186,16 +186,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
     </section>
+<?php include '../PagHeader/footer.php'; ?>
 
-    <div id="footer-placeholder"></div>
-
-    <script>
-        fetch('../PagHeader/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
-    </script>
 
     <script>
         document.getElementById("btn-realizar").addEventListener("click", function (e) {
@@ -242,5 +234,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             });
         });
     </script>
+
+<?php include '../PagHeader/footer.php'; ?>
+
 </body>
+
 </html>

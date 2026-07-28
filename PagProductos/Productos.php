@@ -112,26 +112,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <script>
     console.log("¡El script se está ejecutando correctamente!");
 
-    fetch('../PagHeader/header.html')
-        .then(response => {
-            console.log("Estatus del header:", response.status); 
-            return response.text();
-        })
-        .then(data => {
-            console.log("¡El HTML del header llegó correctamente!"); 
-            document.getElementById('header-placeholder').innerHTML = data;
-            comprobarBusquedaDesdeInicio();
-        })
-        .catch(error => console.error("Error en el fetch del header:", error));
-
    
-    fetch('../PagHeader/footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        })
-        .catch(error => console.error("Error en el fetch del footer:", error));
-
     
     function comprobarBusquedaDesdeInicio() {
         const busquedaGuardada = localStorage.getItem('terminoBusqueda');
@@ -192,6 +173,7 @@ if (session_status() === PHP_SESSION_NONE) {
             }
         }, 50);
     }
+    document.addEventListener("DOMContentLoaded", comprobarBusquedaDesdeInicio);
 
     //   FILTRADO POR TEXTO
     function filtrarProductos(texto, listaProductos) {
@@ -214,16 +196,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 
 
-<div id="footer-placeholder"></div>
-<script>
-    fetch('../PagHeader/header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById
-                ('header-placeholder').innerHTML = data;
-        }
-        )
-</script>
+<?php include '../PagHeader/footer.php'; ?>
 
 <script>
 document.querySelectorAll(".btn-agregar").forEach(boton => {

@@ -100,20 +100,8 @@ $total_final = $subtotal + $costo_envio;
         </section>
     </main>
 
-    <div id="footer-placeholder"></div>
+<?php include '../PagHeader/footer.php'; ?>
 
-    <script>
-        fetch('../PagHeader/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-            });
-
-        fetch('../PagHeader/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
-    </script>
+    
 </body>
 </html>

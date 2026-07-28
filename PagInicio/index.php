@@ -58,43 +58,11 @@ if (session_status() === PHP_SESSION_NONE) {
             </div>
         </section>
     </main>
-    <div id="footer-placeholder"></div>
+<?php include '../PagHeader/footer.php'; ?>
 
     <script src="prin.js"></script>
 
 
-
-   <script>
-function configurarBusquedaInicio() {
-    const inputBusqueda = document.getElementById('input-busqueda');
-
-    if (inputBusqueda) {
-        inputBusqueda.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') {
-
-                const texto = inputBusqueda.value.trim();
-
-                if (texto !== "") {
-                    localStorage.setItem('terminoBusqueda', texto);
-                    window.location.href = "../PagProductos/Productos.php";
-                }
-            }
-        });
-    }
-}
-
-// Espera a que toda la página cargue
-document.addEventListener("DOMContentLoaded", configurarBusquedaInicio);
-</script>
- <script>
-        fetch('../PagHeader/footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById
-            ('footer-placeholder').innerHTML=data;
-        }
-        )
-        </script>
 </body>
 
 </html>

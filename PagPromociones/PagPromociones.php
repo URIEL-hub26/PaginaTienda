@@ -157,44 +157,10 @@ if (session_status() === PHP_SESSION_NONE) {
 
     </main>
 
-    <div id="footer-placeholder"></div>
-
+<?php include '../PagHeader/footer.php'; ?>
     <script src="Prom.js"></script>
 
-    <script>
+    
 
-        fetch('../PagHeader/footer.html')
-            .then(r => r.text())
-            .then(data => {
-                document.getElementById("footer-placeholder").innerHTML = data;
-            });
-
-    </script>
-
-    <script>
-fetch('../PagHeader/header.php')
-.then(response => response.text())
-.then(data => {
-    document.getElementById('header-placeholder').innerHTML = data;
-    // Esperamos un instante a que se pinte el DOM del header
-    setTimeout(configurarBusquedaInicio, 100);
-});
-function configurarBusquedaInicio() {
-    const inputBusqueda = document.getElementById('input-busqueda');
-
-    if (inputBusqueda) {
-        inputBusqueda.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                const texto = inputBusqueda.value.trim();
-                if (texto !== "") {
-                    // Guardamos el término en la memoria del navegador
-                    localStorage.setItem('terminoBusqueda', texto);
-                    // Redirigimos a la sección de productos
-                    window.location.href = "../PagProductos/Productos.php";
-                }
-            }
-        });
-    }
-}
-</script>
+    
 </body>

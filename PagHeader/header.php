@@ -58,4 +58,24 @@ if (session_status() === PHP_SESSION_NONE) {
 
     </div>
 
+    <script>
+function configurarBusquedaInicio() {
+    const inputBusqueda = document.getElementById('input-busqueda');
+
+    if (inputBusqueda) {
+        inputBusqueda.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                const texto = inputBusqueda.value.trim();
+
+                if (texto !== "") {
+                    localStorage.setItem('terminoBusqueda', texto);
+                    window.location.href = "../PagProductos/Productos.php";
+                }
+            }
+        });
+    }
+}
+
+document.addEventListener("DOMContentLoaded", configurarBusquedaInicio);
+</script>
 </header>
