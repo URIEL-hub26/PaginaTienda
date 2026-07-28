@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 
@@ -107,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-    <div id="header-placeholder"></div>
+<?php include '../PagHeader/header.php'; ?>    <main>
 
     <section id="contenedor-pedido">
         <div id="titulo-paso">
@@ -189,12 +190,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div id="footer-placeholder"></div>
 
     <script>
-        fetch('../PagHeader/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-            });
-
         fetch('../PagHeader/footer.html')
             .then(response => response.text())
             .then(data => {

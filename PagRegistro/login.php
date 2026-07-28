@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,8 +13,7 @@
 
     </head>
     <body>
-                <div id="header-placeholder"></div>
-
+<?php include '../PagHeader/header.php'; ?>
 <main>
 <div class="container">
 
@@ -95,13 +99,6 @@
 
 
 </body>
-   <script>
-fetch('../PagHeader/header.html')
-.then(response => response.text())
-.then(data => {
-    document.getElementById('header-placeholder').innerHTML = data;
-});
-</script>
 
 <script>
 fetch('../PagHeader/footer.html')

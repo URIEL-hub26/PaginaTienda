@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -50,8 +55,10 @@
     }
 </style>
 <body>
-    <div id="header-placeholder"></div>
-    <div class="contenedor-catalogo">
+    <?php include '../PagHeader/header.php'; ?>    
+
+        
+<div class="contenedor-catalogo">
 
         <aside class="barra-lateral">
             <h3>Categorías</h3>

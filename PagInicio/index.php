@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -11,8 +16,8 @@
 </head>
 
 <body>
-    <div id="header-placeholder"></div>
-    <main>
+<?php include '../PagHeader/header.php'; ?>    
+<main>
 
         <section id="banner">
             <div id="texto-banner">
@@ -59,39 +64,37 @@
 
 
 
-    <script>
-        fetch('../PagHeader/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-                setTimeout(configurarBusquedaInicio, 100);
-            });
-        function configurarBusquedaInicio() {
-            const inputBusqueda = document.getElementById('input-busqueda');
+   <script>
+function configurarBusquedaInicio() {
+    const inputBusqueda = document.getElementById('input-busqueda');
 
-            if (inputBusqueda) {
-                inputBusqueda.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter') {
-                        const texto = inputBusqueda.value.trim();
-                        if (texto !== "") {
-                            // Guardamos el término en la memoria del navegador
-                            localStorage.setItem('terminoBusqueda', texto);
-                            // Redirigimos a la sección de productos
-                            window.location.href = "../PagProductos/Productos.php";
-                        }
-                    }
-                });
+    if (inputBusqueda) {
+        inputBusqueda.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+
+                const texto = inputBusqueda.value.trim();
+
+                if (texto !== "") {
+                    localStorage.setItem('terminoBusqueda', texto);
+                    window.location.href = "../PagProductos/Productos.php";
+                }
             }
-        }
+        });
+    }
+}
+
+// Espera a que toda la página cargue
+document.addEventListener("DOMContentLoaded", configurarBusquedaInicio);
+</script>
+ <script>
         fetch('../PagHeader/footer.html')
         .then(response => response.text())
         .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        })
-        .catch(error => console.error("Error en el fetch del footer:", error));
-
-    </script>
-
+            document.getElementById
+            ('footer-placeholder').innerHTML=data;
+        }
+        )
+        </script>
 </body>
 
 </html>

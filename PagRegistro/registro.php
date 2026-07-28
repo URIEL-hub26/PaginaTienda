@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,7 +12,8 @@
         <link rel="stylesheet" href="../estilos/estiloHeader.css">
     </head>
     <body>
-        <div id="header-placeholder"></div>
+<?php include '../PagHeader/header.php'; ?>    
+
 <main>
 
 <div class="container">

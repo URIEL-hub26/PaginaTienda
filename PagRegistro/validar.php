@@ -16,6 +16,7 @@ if ($resultado->num_rows > 0) {
     if (password_verify($password, $fila["password"])){
 $_SESSION["id_usuario"] = $fila["id_usuario"];
 $_SESSION["usuario"] = $fila["usuario"];
+$_SESSION["nombre"] = $fila["nombre"];
 $_SESSION["id_rol"] = $fila["id_rol"];
         //echo "Bienvenido". $_SESSION["usuario"];
         if ($fila["id_rol"] == 1) {

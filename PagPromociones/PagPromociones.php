@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,7 +15,7 @@
 </head>
 
 <body>
-    <div id="header-placeholder"></div>
+    <?php include '../PagHeader/header.php'; ?>
     <main>
 
         <section class="banner-slider">
@@ -158,12 +163,6 @@
 
     <script>
 
-        fetch('../PagHeader/header.html')
-            .then(r => r.text())
-            .then(data => {
-                document.getElementById("header-placeholder").innerHTML = data;
-            });
-
         fetch('../PagHeader/footer.html')
             .then(r => r.text())
             .then(data => {
@@ -173,7 +172,7 @@
     </script>
 
     <script>
-fetch('../PagHeader/header.html')
+fetch('../PagHeader/header.php')
 .then(response => response.text())
 .then(data => {
     document.getElementById('header-placeholder').innerHTML = data;
@@ -199,18 +198,3 @@ function configurarBusquedaInicio() {
 }
 </script>
 </body>
-<script>
-    fetch('../PagHeader/header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-        })
-</script>
-
-<script>
-    fetch('../PagHeader/footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        })
-</script>

@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 
@@ -42,7 +43,7 @@ $total_final = $subtotal + $costo_envio;
     <link rel="stylesheet" href="../estilos/estiloHeader.css">
 </head>
 <body>
-    <div id="header-placeholder"></div>
+<?php include '../PagHeader/header.php'; ?>    
     
     <main>
         <section class="contenedor-carrito">
