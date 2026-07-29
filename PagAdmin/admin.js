@@ -61,32 +61,51 @@ function buscarProducto() {
 }
 
 /*==================================
-        GRAFICA (Chart.js)
+        GRÁFICA (Chart.js)
 ==================================*/
-// Registrar el plugin de datalabels en Chart.js
-Chart.register(ChartDataLabels);
+// Registrar el plugin de datalabels si ChartDataLabels está disponible
+if (typeof ChartDataLabels !== "undefined" && typeof Chart !== "undefined") {
+    Chart.register(ChartDataLabels);
+}
 
-function crearGrafica() {
+async function crearGrafica() {
     const canvas = document.getElementById("grafica");
     if (!canvas) return;
 
-    const datosVentas = [12000, 19000, 15000, 22000, 18000, 25000];
+    // 1. Obtener la suma real desde ventas_del_mes.php
+    let totalJulioBD = 0;
+    try {
+        const respuesta = await fetch("ventas_del_mes.php");
+        if (!respuesta.ok) {
+            throw new Error(`Error HTTP: ${respuesta.status}`);
+        }
+        const datos = await respuesta.json();
+        totalJulioBD = parseFloat(datos.total_mes) || 0;
+    } catch (error) {
+        console.error("Error al obtener las ventas de la BD:", error);
+    }
 
-    // Total acumulado arriba de la tarjeta
+    // 2. Meses y valores (Enero a Junio simulados/anteriores, Julio REAL de pedidos)
+    const etiquetasMeses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio"];
+    const datosVentas = [12000, 19000, 15000, 22000, 18000, 25000, totalJulioBD];
+
+    // 3. Actualizar el Total Acumulado en el DOM
     const total = datosVentas.reduce((acc, val) => acc + val, 0);
     const totalElemento = document.getElementById("totalVentas");
     if (totalElemento) {
         totalElemento.textContent = "$" + total.toLocaleString("es-MX") + " MXN";
     }
 
+    // 4. Destruir gráfica previa si ya existía
     if (miGrafica) {
         miGrafica.destroy();
     }
 
+    // 5. Renderizar gráfica
     miGrafica = new Chart(canvas, {
         type: "bar",
         data: {
-            labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"],
+            labels: etiquetasMeses,
             datasets: [{
                 label: "Ventas",
                 data: datosVentas,
@@ -96,7 +115,8 @@ function crearGrafica() {
                     "#66BB6A",
                     "#81C784",
                     "#A5D6A7",
-                    "#C8E6C9"
+                    "#C8E6C9",
+                    "#1B5E20" // Destacar mes actual
                 ],
                 borderWidth: 1,
                 borderRadius: 6
@@ -105,56 +125,26 @@ function crearGrafica() {
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            // Dar un poco de espacio extra arriba para que los números no se corten
             layout: {
-                padding: {
-                    top: 25
-                }
+                padding: { top: 25 }
             },
             plugins: {
-                legend: {
-                    display: false
-                },
-                // ==========================================
-                // CONFIGURACIÓN DE LOS VALORES EN CADA BARRA
-                // ==========================================
+                legend: { display: false },
                 datalabels: {
-                    anchor: 'end',      // Anclar al final de la barra
-                    align: 'top',       // Posicionar justo encima de la barra
-                    formatter: function(value) {
-                        // Formatea el valor con signo $ y comas (ej. $15,000)
-                        return '$' + value.toLocaleString('es-MX');
-                    },
-                    font: {
-                        weight: 'bold',
-                        size: 12
-                    },
+                    anchor: 'end',
+                    align: 'top',
+                    formatter: (value) => '$' + value.toLocaleString('es-MX'),
+                    font: { weight: 'bold', size: 11 },
                     color: '#333333'
                 }
             },
             scales: {
                 x: {
-                    title: {
-                        display: true,
-                        text: 'Mes del Año',
-                        color: '#333333',
-                        font: {
-                            size: 14,
-                            weight: 'bold'
-                        }
-                    }
+                    title: { display: true, text: 'Mes del Año', color: '#333333', font: { size: 14, weight: 'bold' } }
                 },
                 y: {
                     beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Ganancias (MXN)',
-                        color: '#333333',
-                        font: {
-                            size: 14,
-                            weight: 'bold'
-                        }
-                    }
+                    title: { display: true, text: 'Ganancias (MXN)', color: '#333333', font: { size: 14, weight: 'bold' } }
                 }
             }
         }
