@@ -18,7 +18,6 @@ $_SESSION["id_usuario"] = $fila["id_usuario"];
 $_SESSION["usuario"] = $fila["usuario"];
 $_SESSION["nombre"] = $fila["nombre"];
 $_SESSION["id_rol"] = $fila["id_rol"];
-        //echo "Bienvenido". $_SESSION["usuario"];
         if ($fila["id_rol"] == 1) {
             header("Location: ../PagAdmin/PagAdmin.php");
         } elseif ($fila["id_rol"] == 2) {
