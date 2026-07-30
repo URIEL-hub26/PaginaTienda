@@ -150,3 +150,120 @@ async function crearGrafica() {
         }
     });
 }
+
+/*==================================
+        IMPRESIÓN DE REPORTES
+==================================*/
+function imprimirReporte() {
+    const canvas = document.getElementById('grafica');
+    if (!canvas) {
+        alert("No se encontró la gráfica para imprimir.");
+        return;
+    }
+
+    // 1. Convertir la gráfica a imagen en formato PNG
+    const imagenGrafica = canvas.toDataURL('image/png');
+    const totalTexto = document.getElementById('totalVentas') ? document.getElementById('totalVentas').innerText : '$0 MXN';
+
+    // 2. Abrir una nueva pestaña
+    const ventanaImpresion = window.open('', '_blank');
+
+    // 3. Estructurar el HTML de la pestaña de impresión
+    ventanaImpresion.document.write(`
+        <!DOCTYPE html>
+        <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <title>Reporte de Ventas - NovaMart</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    padding: 40px;
+                    color: #333;
+                    background-color: #fff;
+                }
+                .header {
+                    text-align: center;
+                    border-bottom: 3px solid #2e7d32;
+                    padding-bottom: 12px;
+                    margin-bottom: 25px;
+                }
+                .header h1 {
+                    margin: 0;
+                    color: #2e7d32;
+                    font-size: 1.8rem;
+                }
+                .header p {
+                    margin: 5px 0 0 0;
+                    color: #666;
+                    font-size: 0.9rem;
+                }
+                .info-box {
+                    background-color: #f8f9fa;
+                    border-left: 5px solid #2e7d32;
+                    padding: 15px;
+                    font-size: 1.1rem;
+                    margin-bottom: 30px;
+                }
+                .grafica-contenedor {
+                    text-align: center;
+                    margin: 20px 0;
+                }
+                .grafica-img {
+                    width: 100%;
+                    max-width: 750px;
+                    height: auto;
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    padding: 10px;
+                }
+                .acciones {
+                    text-align: center;
+                    margin-top: 30px;
+                }
+                .btn-imprimir-pdf {
+                    padding: 10px 20px;
+                    background-color: #2e7d32;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    font-size: 1rem;
+                }
+                @media print {
+                    .acciones { display: none; }
+                    body { padding: 0; }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="header">
+                <h1>🛒 NovaMart - Reporte de Ventas</h1>
+                <p>Fecha de emisión: ${new Date().toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+            </div>
+
+            <div class="info-box">
+                <strong>Total acumulado del semestre:</strong> ${totalTexto}
+            </div>
+
+            <div class="grafica-contenedor">
+                <img src="${imagenGrafica}" class="grafica-img" alt="Gráfica de Ventas Semestral">
+            </div>
+
+            <div class="acciones">
+                <button class="btn-imprimir-pdf" onclick="window.print()">🖨️ Imprimir / Guardar en PDF</button>
+            </div>
+
+            <script>
+                // Disparar la ventana de impresión al cargar la página
+                window.onload = function() {
+                    window.print();
+                };
+            <\/script>
+        </body>
+        </html>
+    `);
+
+    ventanaImpresion.document.close();
+}

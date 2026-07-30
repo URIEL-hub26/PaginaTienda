@@ -160,12 +160,18 @@ while($row = $resVentas->fetch_assoc()) {
      <section id="reportes">
     <h1>Reportes de Ventas</h1>
     
-    <!-- Texto alineado a la izquierda arriba de la tarjeta -->
-    <p class="total-texto">
-        Total acumulado del semestre: <span id="totalVentas">$0 MXN</span>
-    </p>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <p class="total-texto" style="margin: 0;">
+            Total acumulado del semestre: <span id="totalVentas">$0 MXN</span>
+        </p>
+        
+       
+        <button onclick="imprimirReporte()" style="background-color: #2e7d32; color: white; border: none; padding: 10px 18px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.9rem;">
+            🖨️ Imprimir Reporte
+        </button>
+    </div>
 
-    <!-- Tarjeta blanca con la gráfica -->
+   
     <div class="contenedor-grafica">
         <canvas id="grafica"></canvas>
     </div>
