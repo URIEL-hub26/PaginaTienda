@@ -50,7 +50,7 @@ while($row = $resVentas->fetch_assoc()) {
             <li onclick="show('usuarios')">Usuarios</li>
             <li onclick="show('pedidos')">Pedidos</li>
             <li onclick="show('reportes')">Reportes</li>
-            <li onclick="show('config')">Configuración</li>
+            <li><a href="../PagInicio/index.php" style="color: inherit; text-decoration: none; display: block;">Salir</a></li>
         </ul>
     </aside>
     <main>
@@ -171,7 +171,7 @@ while($row = $resVentas->fetch_assoc()) {
     </div>
 </section>
         <section id="config">
-            <h1>Configuración</h1>
+            <h1>Salir</h1>
         </section>
     </main>
     <script src="admin.js"></script>
