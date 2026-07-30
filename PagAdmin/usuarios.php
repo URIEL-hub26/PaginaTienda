@@ -23,29 +23,50 @@ $resultado = $conexion->query($sql);
 <html>
 
 <head>
-
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #fff;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 10px;
         }
 
         th,
         td {
-            padding: 10px;
+            padding: 12px;
             border: 1px solid #ddd;
             text-align: center;
         }
 
         th {
-            background: #2E7D32;
+            background-color: #2e7d32;
             color: white;
+            font-size: 0.9rem;
+            text-transform: uppercase;
         }
 
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Estilo base para todos los botones */
         button {
-            padding: 8px;
+            width: 90px;            /* Mismo ancho fijo para todos */
+            padding: 6px 0;         /* Alto uniforme */
+            margin: 2px 0;          /* Separación limpia entre botones */
             border: none;
+            border-radius: 4px;
             cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-align: center;
+            box-sizing: border-box;
         }
 
         .btn-editar {
@@ -63,11 +84,9 @@ $resultado = $conexion->query($sql);
             color: white;
         }
     </style>
-
 </head>
 
 <body>
-
 
     <table>
 
@@ -84,87 +103,37 @@ $resultado = $conexion->query($sql);
             </tr>
         </thead>
 
-
         <tbody>
 
-            <?php
-
-            while ($fila = $resultado->fetch_assoc()) {
-
-                ?>
+            <?php while ($fila = $resultado->fetch_assoc()) { ?>
 
                 <tr>
-
+                    <td><?= $fila["id_usuario"] ?></td>
+                    <td><?= $fila["nombre"] ?></td>
+                    <td><?= $fila["apellido_paterno"] . " " . $fila["apellido_materno"] ?></td>
+                    <td><?= $fila["correo"] ?></td>
+                    <td><?= $fila["usuario"] ?></td>
+                    <td><?= $fila["telefono"] ?></td>
+                    <td><?= $fila["rol"] ?></td>
                     <td>
-                        <?= $fila["id_usuario"] ?>
-                    </td>
-
-                    <td>
-                        <?= $fila["nombre"] ?>
-                    </td>
-
-                    <td>
-                        <?= $fila["apellido_paterno"] . " " . $fila["apellido_materno"] ?>
-                    </td>
-
-                    <td>
-                        <?= $fila["correo"] ?>
-                    </td>
-
-                    <td>
-                        <?= $fila["usuario"] ?>
-                    </td>
-
-                    <td>
-                        <?= $fila["telefono"] ?>
-                    </td>
-
-                    <td>
-                        <?= $fila["rol"] ?>
-                    </td>
-
-
-                    <td>
-
                         <a href="editar_usuario.php?id=<?= $fila['id_usuario'] ?>">
-                            <button class="btn-editar">
-                                ✏️ Editar
-                            </button>
+                            <button class="btn-editar">✏️ Editar</button>
                         </a>
-
-
                         <a href="cambiar_rol.php?id=<?= $fila['id_usuario'] ?>">
-                            <button class="btn-rol">
-                                🔄 Rol
-                            </button>
+                            <button class="btn-rol">🔄 Rol</button>
                         </a>
-
-
                         <a href="eliminar_usuario.php?id=<?= $fila['id_usuario'] ?>"
-                            onclick="return confirm('¿Seguro que deseas eliminar este usuario?')">
-
-                            <button class="btn-eliminar">
-                                🗑️ Eliminar
-                            </button>
-
+                           onclick="return confirm('¿Seguro que deseas eliminar este usuario?')">
+                            <button class="btn-eliminar">🗑️ Eliminar</button>
                         </a>
-
                     </td>
-
-
                 </tr>
 
-
-                <?php
-
-            }
-
-            ?>
+            <?php } ?>
 
         </tbody>
 
     </table>
-
 
 </body>
 

@@ -32,7 +32,7 @@ $resultado = $conexion->query($sql);
         th, td {
             padding: 12px;
             border: 1px solid #ddd;
-            text-align: left;
+            text-align: center; /* Se cambia a center para alinear todo */
         }
         th {
             background-color: #2e7d32;

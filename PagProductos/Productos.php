@@ -29,8 +29,8 @@ if (session_status() === PHP_SESSION_NONE) {
         /* 📉 REDUCCIÓN DE ALTURA: Ocupa solo el 65% de la tarjeta para no tapar el botón */
         height: 65% !important; 
         
-        background: rgba(0, 0, 0, 0.90) !important;
-        color: #ffffff !important;
+        background:#c8e6c9 !important;
+        color: #ffffff solid !important;
         font-size: 0.8rem !important;
         line-height: 1.3 !important;
         padding: 12px !important;

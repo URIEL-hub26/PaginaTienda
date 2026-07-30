@@ -13,7 +13,19 @@ $sqlCategorias = "SELECT * FROM categorias";
 
 $categorias = $conexion->query($sqlCategorias);
 
+// En PagAdmin.php
+$sqlVentas = "SELECT MONTHNAME(fecha) AS mes, SUM(total) AS total FROM pedidos GROUP BY MONTH(fecha)";
+$resVentas = $conexion->query($sqlVentas);
+
+$meses = [];
+$totales = [];
+
+while($row = $resVentas->fetch_assoc()) {
+    $meses[] = $row['mes'];
+    $totales[] = $row['total'];
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -25,6 +37,8 @@ $categorias = $conexion->query($sqlCategorias);
     <link rel="stylesheet" href="../estilos/estiloFooter.css">
     <link rel="stylesheet" href="../estilos/estiloHeader.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Plugin para mostrar los valores encima de las barras -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
 </head>
 
 <body>
@@ -36,7 +50,7 @@ $categorias = $conexion->query($sqlCategorias);
             <li onclick="show('usuarios')">Usuarios</li>
             <li onclick="show('pedidos')">Pedidos</li>
             <li onclick="show('reportes')">Reportes</li>
-            <li onclick="show('config')">Configuración</li>
+            <li><a href="../PagInicio/index.php" style="color: inherit; text-decoration: none; display: block;">Salir</a></li>
         </ul>
     </aside>
     <main>
@@ -143,11 +157,21 @@ $categorias = $conexion->query($sqlCategorias);
                 style="border:none;">
             </iframe>
         </section>
-        <section id="reportes">
-            <h1>Reportes</h1><canvas id="grafica"></canvas>
-        </section>
+     <section id="reportes">
+    <h1>Reportes de Ventas</h1>
+    
+    <!-- Texto alineado a la izquierda arriba de la tarjeta -->
+    <p class="total-texto">
+        Total acumulado del semestre: <span id="totalVentas">$0 MXN</span>
+    </p>
+
+    <!-- Tarjeta blanca con la gráfica -->
+    <div class="contenedor-grafica">
+        <canvas id="grafica"></canvas>
+    </div>
+</section>
         <section id="config">
-            <h1>Configuración</h1>
+            <h1>Salir</h1>
         </section>
     </main>
     <script src="admin.js"></script>
