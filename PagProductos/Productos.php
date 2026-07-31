@@ -70,7 +70,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 <li><a href="#" data-categoria="limpieza">Limpieza</a></li>
                 <li><a href="#" data-categoria="botanas">Botanas</a></li>
                 <li><a href="#" data-categoria="enlatados">Enlatados</a></li>
-                <li><a href="#" data-categoria="cuidadopersonal">Cuidado personal</a></li>
+               
             </ul>
         </aside>
 
@@ -214,7 +214,7 @@ document.querySelectorAll(".btn-agregar").forEach(boton => {
             if (respuesta.trim() === "ok") {
                 alert("Producto agregado al carrito 🛒");
             } else {
-                alert("Ocurrió un error");
+                alert("Debes inciar sección");
                 console.log("Respuesta del servidor:", respuesta);
             }
         })
