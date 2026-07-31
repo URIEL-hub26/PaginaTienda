@@ -11,7 +11,7 @@ include "../PagProductos/conexionProducto.php";
 
 $id_usuario = $_SESSION['id_usuario'];
 
-$sql = "SELECT productos.nombre, productos.precio, carrito.cantidad 
+$sql = "SELECT productos.id_producto, productos.nombre, productos.precio, carrito.cantidad 
         FROM carrito 
         INNER JOIN productos ON carrito.id_producto = productos.id_producto 
         WHERE carrito.id_usuario = ?";
@@ -56,6 +56,7 @@ $total_final = $subtotal + $costo_envio;
                         <th>Precio</th>
                         <th>Cantidad</th>
                         <th>Subtotal</th>
+                        <th>Acciones</th> 
                     </tr>
                 </thead>
                 <tbody>
@@ -64,13 +65,31 @@ $total_final = $subtotal + $costo_envio;
                             <tr>
                                 <td><?php echo htmlspecialchars($prod['nombre']); ?></td>
                                 <td>$<?php echo number_format($prod['precio'], 2); ?></td>
-                                <td><?php echo $prod['cantidad']; ?></td>
+                                <td>
+                            <form action="actualizar_carrito.php" method="POST" class="form-cantidad">
+                                 <input type="hidden" name="id_producto" value="<?php echo $prod['id_producto']; ?>">        
+                                 <button type="submit" name="accion" value="restar" class="btn-cant">-</button>
+                                <span class="num-cant"><?php echo $prod['cantidad']; ?></span>
+                                <button type="submit" name="accion" value="sumar" class="btn-cant">+</button>
+                            </form>
+                            </td>
+
                                 <td>$<?php echo number_format($prod['subtotal'], 2); ?></td>
-                            </tr>
+
+                            <td>
+                        <form action="actualizar_carrito.php" method="POST" style="margin: 0;">
+                            <input type="hidden" name="id_producto" value="<?php echo $prod['id_producto']; ?>">
+                            <button type="submit" name="accion" value="eliminar" class="btn-eliminar" onclick="return confirm('¿Deseas quitar este producto?');">
+                                🗑️
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+
                         <?php endforeach; ?>
                     <?php else: ?>
                         <tr>
-                            <td colspan="4" style="text-align: center; padding: 20px;">Tu carrito está vacío 🛒</td>
+                            <td colspan="5" style="text-align: center; padding: 20px;">Tu carrito está vacío 🛒</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>
