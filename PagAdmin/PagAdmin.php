@@ -8,9 +8,7 @@ if ($_SESSION["id_rol"] != 1) {
     exit();
 }
 
-
 $sqlCategorias = "SELECT * FROM categorias";
-
 $categorias = $conexion->query($sqlCategorias);
 
 // En PagAdmin.php
@@ -24,6 +22,26 @@ while($row = $resVentas->fetch_assoc()) {
     $meses[] = $row['mes'];
     $totales[] = $row['total'];
 }
+
+$sqlTotal = "SELECT SUM(total) AS total_ingresos FROM pedidos";
+$resTotal = $conexion->query($sqlTotal);
+$rowTotal = $resTotal->fetch_assoc();
+$totalIngresos = $rowTotal['total_ingresos'] ?? 0;
+
+$sqlClientes = "SELECT COUNT(*) AS total_clientes FROM usuarios WHERE id_rol = 3";
+$resClientes = $conexion->query($sqlClientes);
+$rowClientes = $resClientes->fetch_assoc();
+$totalClientes = $rowClientes['total_clientes'] ?? 0;
+
+$sqlTotalPedidos = "SELECT COUNT(*) AS total_ventas FROM pedidos";
+$resTotalPedidos = $conexion->query($sqlTotalPedidos);
+$rowTotalPedidos = $resTotalPedidos->fetch_assoc();
+$totalVentas = $rowTotalPedidos['total_ventas'] ?? 0;
+
+$sqlProductosVendidos = "SELECT SUM(cantidad) AS total_vendidos FROM detalle_pedido";
+$resProductosVendidos = $conexion->query($sqlProductosVendidos);
+$rowProductosVendidos = $resProductosVendidos->fetch_assoc();
+$totalProductosVendidos = $rowProductosVendidos['total_vendidos'] ?? 0;
 ?>
 
 <!DOCTYPE html>
@@ -59,21 +77,21 @@ while($row = $resVentas->fetch_assoc()) {
             <div class="cards">
                 <div class="card">
                     <h3>Productos</h3>
-                    <h2>250</h2>
+                    <h2><?= number_format($totalProductosVendidos) ?></h2>
                 </div>
 
                 <div class="card">
                     <h3>Ventas</h3>
-                    <h2>75</h2>
+                    <h2><?= number_format($totalVentas) ?></h2>
                 </div>
                 <div class="card">
                     <h3>Clientes</h3>
-                    <h2>120</h2>
+                    <h2><?= number_format($totalClientes) ?></h2>
                 </div>
                 <div class="card">
-                    <h3>Ingresos</h3>
-                    <h2>$15,240</h2>
-                </div>
+    <h3>Ingresos</h3>
+    <h2>$<?= number_format($totalIngresos, 2) ?></h2>
+</div>
             </div>
         </section>
         <section id="productos">

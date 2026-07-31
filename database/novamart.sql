@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
+<<<<<<<< HEAD:database/novamart.sql
 -- Tiempo de generación: 31-07-2026 a las 05:36:18
+========
+-- Tiempo de generación: 31-07-2026 a las 05:03:45
+>>>>>>>> main:database/novamart (2).sql
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
