@@ -234,3 +234,40 @@ td span {
         padding: 12px;
     }
 }
+.form-cantidad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.btn-cant {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-cant:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-eliminar {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.btn-eliminar:hover {
+    transform: scale(1.15);
+}
