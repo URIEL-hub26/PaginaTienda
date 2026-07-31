@@ -186,7 +186,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
     </section>
-<?php include '../PagHeader/footer.php'; ?>
 
 
     <script>

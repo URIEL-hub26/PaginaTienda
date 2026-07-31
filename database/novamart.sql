@@ -74,7 +74,7 @@ INSERT INTO `categorias` (`id_categoria`, `nombre`, `descripcion`) VALUES
 (3, 'Bebidas', NULL),
 (4, 'Limpieza', NULL),
 (5, 'Botanas', NULL),
-(6, 'Enlatados', NULL),
+(6, 'Enlatados', NULL);
 
 
 -- --------------------------------------------------------
