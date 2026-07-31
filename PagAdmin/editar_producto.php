@@ -79,7 +79,7 @@ required>
 
 <img
 class="imagen-producto"
-src="../imagenes/productos/<?= $producto['imagen'] ?>">
+src="../PagInicio/imagenes/<?= $producto['imagen'] ?>">
 <br>
      <label>Nueva imagen</label>
 
