@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-07-2026 a las 05:38:22
+-- Tiempo de generación: 31-07-2026 a las 05:03:45
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -111,7 +111,31 @@ INSERT INTO `detalle_pedido` (`id_detalle`, `id_pedido`, `id_producto`, `cantida
 (16, 4, 19, 1, 37.00, 37.00),
 (17, 4, 17, 1, 35.00, 35.00),
 (18, 5, 3, 1, 32.00, 32.00),
-(19, 5, 11, 1, 28.00, 28.00);
+(19, 5, 11, 1, 28.00, 28.00),
+(20, 6, 18, 1, 89.90, 0.00),
+(21, 7, 2, 2, 63.50, 0.00),
+(22, 8, 28, 2, 50.00, 0.00),
+(23, 9, 19, 2, 37.00, 0.00),
+(24, 10, 21, 1, 48.50, 0.00),
+(25, 10, 25, 1, 58.00, 0.00),
+(26, 11, 3, 1, 32.00, 0.00),
+(27, 11, 5, 1, 63.00, 0.00),
+(28, 12, 14, 2, 32.00, 0.00),
+(29, 13, 29, 1, 45.00, 0.00),
+(30, 14, 7, 1, 48.50, 0.00),
+(31, 14, 19, 1, 37.00, 0.00),
+(32, 15, 26, 1, 14.50, 0.00),
+(33, 15, 27, 1, 23.50, 0.00),
+(34, 15, 4, 1, 19.00, 0.00),
+(35, 15, 10, 2, 25.00, 0.00),
+(36, 16, 11, 1, 28.00, 28.00),
+(37, 16, 3, 1, 32.00, 32.00),
+(38, 16, 13, 1, 30.00, 30.00),
+(39, 16, 19, 1, 37.00, 37.00),
+(40, 16, 17, 1, 35.00, 35.00),
+(41, 16, 14, 1, 32.00, 32.00),
+(42, 16, 29, 1, 45.00, 45.00),
+(43, 16, 30, 1, 40.00, 40.00);
 
 -- --------------------------------------------------------
 
@@ -151,7 +175,18 @@ INSERT INTO `pedidos` (`id_pedido`, `id_usuario`, `fecha`, `total`, `estado`) VA
 (2, 7, '2026-07-26 02:14:44', 273.00, 'Pendiente'),
 (3, 6, '2026-07-26 04:22:30', 60.00, 'Pendiente'),
 (4, 6, '2026-07-26 04:25:07', 134.00, 'Pendiente'),
-(5, 6, '2026-07-26 04:40:12', 110.00, 'Pendiente');
+(5, 6, '2026-07-26 04:40:12', 110.00, 'Pendiente'),
+(6, 1, '2026-07-27 10:15:00', 89.90, 'Pendiente'),
+(7, 7, '2026-07-27 11:30:22', 127.00, 'Pendiente'),
+(8, 6, '2026-07-28 09:05:10', 100.00, 'Pendiente'),
+(9, 1, '2026-07-28 14:20:45', 74.00, 'Pendiente'),
+(10, 7, '2026-07-28 18:00:12', 116.00, 'Pendiente'),
+(11, 6, '2026-07-29 08:45:30', 97.00, 'Pendiente'),
+(12, 1, '2026-07-29 12:10:00', 64.00, 'Pendiente'),
+(13, 7, '2026-07-29 16:50:18', 45.00, 'Pendiente'),
+(14, 6, '2026-07-30 11:05:40', 85.00, 'Pendiente'),
+(15, 1, '2026-07-30 15:30:00', 123.50, 'Pendiente'),
+(16, 6, '2026-07-31 02:18:08', 279.00, 'Pendiente');
 
 -- --------------------------------------------------------
 
@@ -252,7 +287,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido_paterno`, `apellido_materno`, `correo`, `usuario`, `password`, `telefono`, `fecha_registro`, `id_rol`) VALUES
 (1, 'REINHARD', 'ARROYO', 'BETANCOURT', 'rei_uri@hotmail.com', 'URIEL', '$2y$10$Lyy.E9LkuAknJuM8liMfLO8U8euQYHtASFaxUoY0NUt9OgYXSct/W', '7775240330', '2026-07-24 02:40:32', 1),
-(5, 'pedro', 'gonzales', 'Giles', 'pedro@gmail.com', 'PedroP', '$2y$10$LXk8fhbWW9k8E9nT9WVFo.tWMChcsG2y3gT2XkJWnG6bH0/DxDIry', '67878668687', '2026-07-24 17:24:00', 3),
+(5, 'pedro', 'gonzales', 'Giles', 'pedro@gmail.com', 'PedroP', '$2y$10$LXk8fhbWW9k8E9nT9WVFo.tWMChcsG2y3gT2XkJWnG6bH0/DxDIry', '67878668687', '2026-07-24 17:24:00', 2),
 (6, 'Aldo', 'Martinez', 'Giles', 'martinezgilesuriel@gmail.com', 'Aldo', '$2y$10$j3L5B5tKyBj0QDxHbDkAG.Dez/iXlgsf0ZVmR8BuYQ/gNa/XH18lG', '123456778', '2026-07-24 18:14:32', 1),
 (7, 'Naomi', 'Mendez', 'Valdez', 'nm5499366@gmail.com', 'NaomiMV', '$2y$10$rlKcZna98EADoVeuH0Ttp.2p3/VJ.m/ZTozpCHOTB.Dm87VsqgwDC', '7341883657', '2026-07-26 00:07:30', 3);
 
@@ -328,7 +363,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `carrito`
 --
 ALTER TABLE `carrito`
-  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `categorias`
@@ -340,7 +375,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `detalle_pedido`
 --
 ALTER TABLE `detalle_pedido`
-  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de la tabla `pagos`
@@ -352,7 +387,7 @@ ALTER TABLE `pagos`
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
