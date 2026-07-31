@@ -1,4 +1,5 @@
 <footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <div class="footer-container">
 
         <div class="footer-col">
@@ -18,13 +19,12 @@
 
             <ul>
 
-                <li><a href="/PagInicio/index.html">Inicio</a></li>
+                <li><a href="../PagInicio/index.php">Inicio</a></li>
 
-                <li><a href="/PagProductos/productos.html">Productos</a></li>
+                <li><a href="../PagProductos/productos.php">Productos</a></li>
 
-                <li><a href="/PagPromociones/promociones.html">Promociones</a></li>
+                <li><a href="../PagPromociones/PagPromociones.php">Promociones</a></li>
 
-                <li><a href="/PagNosotros/nosotros.html">Nosotros</a></li>
 
             </ul>
 
